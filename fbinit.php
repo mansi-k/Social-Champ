@@ -4,7 +4,7 @@ ob_start();
 if (!session_id()) {
     session_start();
 }
-
+include_once 'dbconn.php';
 require_once 'fbapi/vendor/autoload.php';
 $fb = new Facebook\Facebook([
     'app_id' => '550812835258864',

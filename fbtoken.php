@@ -1,6 +1,8 @@
 <?php
 
+session_start();
 include_once 'fbinit.php';
+
 
 $helper = $fb->getRedirectLoginHelper();
 
@@ -61,20 +63,60 @@ if (! $accessToken->isLongLived()) {
     var_dump($accessToken->getValue());
 }
 
-$_SESSION['fb_access_token'] = (string) $accessToken;
+$fb_token=$_SESSION['fb_access_token'] = (string) $accessToken;
 $udetails = $fb->get('/me?fields=id,name', $_SESSION['fb_access_token']);
 $ud = $udetails->getGraphNode();
 
-$_SESSION['fb_uid'] = $ud['id'];
-$_SESSION['fb_uname'] = $ud['name'];
+$fb_uid=$_SESSION['fb_uid'] = $ud['id'];
+$fb_uname=$_SESSION['fb_uname'] = $ud['name'];
 
 $perm           =   $fb->get('/'.$_SESSION["fb_uid"].'/permissions',$accessToken);
 $perm           =   $perm->getGraphEdge();
 
-echo $perm;
+$expdate = $accessToken->getExpiresAt();
+$exp = null;
+if($expdate!=null)
+	$exp = $expdate->format('Y-m-d H:i:s');
+$fb_date=$_SESSION['fb_token_exp'] = $exp;
+
+$uid=$_SESSION['u_id'];
+echo "abcd".$uid;
+
+$db = mysqli_connect('localhost', 'root', '', 'sci3');
+
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+} 
+
+$res = mysqli_query($db,"INSERT INTO user_accounts (u_id,at_id,account_id,account_name,account_token,token_expiry,account_secret)
+VALUES ($uid,1,'$fb_uid','$fb_uname','$fb_token','$fb_date' ,'')");
+echo mysqli_error($db);
+
+$_SESSION['success']="";
+
+if($res) 
+{
+	
+  	header('Location:oauthlinks.php');
+	
+}
+else
+{
+	echo "failed";
+	
+}
+
+
+
+//echo $perm;
 
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
 //header('Location: fbscan.php');
+/*
+echo "<br><br>".$_SESSION['fb_access_token'];
+echo "<br><br>".$_SESSION['fb_uid'];
+echo "<br><br>".$_SESSION['fb_token_exp'];
 
+*/
 ?>
