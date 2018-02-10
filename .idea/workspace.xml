@@ -15,137 +15,27 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fbngofunc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fbngofunc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="554" column="16" lean-forward="false" selection-start-line="554" selection-start-column="16" selection-end-line="554" selection-end-column="16" />
-              <folding>
-                <marker date="1516372272970" expanded="true" signature="25814:25854" ph="INSERT INTO user... " />
-                <marker date="1516372272970" expanded="true" signature="25970:26062" ph="INSERT INTO user_accounts... " />
-                <marker date="1516372272970" expanded="true" signature="26138:26200" ph="INSERT INTO user_extended... " />
-                <marker date="1516372272970" expanded="true" signature="26335:26400" ph="INSERT INTO user_scores... " />
-                <marker date="1516372272970" expanded="true" signature="26962:27005" ph="SELECT ue_id... user_extended" />
-                <marker date="1516372272970" expanded="true" signature="26962:27021" ph="SELECT ue_id... user_extended" />
-                <marker date="1516372272970" expanded="true" signature="27208:27268" ph="SELECT ue_id... user_extended" />
-                <marker date="1516372272970" expanded="true" signature="27331:27374" ph="SELECT ue_id... user_extended" />
-                <marker date="1516372272970" expanded="true" signature="27514:27545" ph="SELECT us_id... user_scores" />
-                <marker date="1516372272970" expanded="true" signature="27514:27556" ph="SELECT us_id... user_scores" />
-                <marker date="1516372272970" expanded="true" signature="27514:27557" ph="SELECT us_id... user_scores" />
-                <marker date="1516372272970" expanded="true" signature="27514:27573" ph="SELECT us_id... user_scores" />
-                <marker date="1516372272970" expanded="true" signature="27701:27736" ph="UPDATE user_... " />
-                <marker date="1516372272970" expanded="true" signature="27701:27737" ph="UPDATE user_... " />
-                <marker date="1516372272970" expanded="true" signature="27701:27752" ph="UPDATE user_... " />
-                <marker date="1516372272970" expanded="true" signature="27701:27753" ph="UPDATE user_... " />
-                <marker date="1516372272970" expanded="true" signature="27701:27754" ph="UPDATE user_... " />
-                <marker date="1516372272970" expanded="true" signature="27701:27770" ph="UPDATE user_... " />
-                <marker date="1516372272970" expanded="true" signature="27836:27901" ph="INSERT INTO user_scores... " />
-                <marker date="1516372272970" expanded="true" signature="29091:29150" ph="SELECT ot_id... social_object_types" />
-                <marker date="1516372272970" expanded="true" signature="29277:29461" ph="INSERT INTO ngo_social_objects... " />
-                <marker date="1516372272970" expanded="true" signature="29577:29625" ph="UPDATE ngo_s... " />
-                <marker date="1516372272970" expanded="true" signature="29577:29642" ph="UPDATE ngo_s... " />
-                <marker date="1516372272970" expanded="true" signature="29577:29643" ph="UPDATE ngo_s... " />
-                <marker date="1516372272970" expanded="true" signature="30790:30843" ph="SELECT COUNT... user_accounts" />
-                <marker date="1516372272970" expanded="true" signature="30790:30855" ph="SELECT COUNT... " />
-                <marker date="1516372272970" expanded="true" signature="30998:31052" ph="SELECT COUNT... " />
-                <marker date="1516372272970" expanded="true" signature="30998:31064" ph="SELECT ns_id... ngo_social_objects" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="extrascan.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extrascan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1516456705782" expanded="true" signature="1001:1145" ph="SELECT a.acc... user_accounts" />
+                <marker date="1518271040207" expanded="true" signature="1706:1794" ph="SELECT * FRO... ngo_social_objects" />
+                <marker date="1518271040207" expanded="true" signature="6000:6041" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="extra_scan_func.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extra_scan_func.php">
+      <file leaf-file-name="fbinit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fbinit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="338" column="24" lean-forward="false" selection-start-line="338" selection-start-column="24" selection-end-line="338" selection-end-column="24" />
+            <state relative-caret-position="578">
+              <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
               <folding>
-                <marker date="1516456971451" expanded="true" signature="1014:1085" ph="SELECT u_id user_accounts" />
-                <marker date="1516456971451" expanded="true" signature="2188:2263" ph="SELECT u_id user_accounts" />
-                <marker date="1516456971451" expanded="true" signature="3381:3456" ph="SELECT u_id user_accounts" />
-                <marker date="1516456971451" expanded="true" signature="4645:4720" ph="SELECT u_id user_accounts" />
-                <marker date="1516456971451" expanded="true" signature="5670:5745" ph="SELECT u_id user_accounts" />
-                <marker date="1516456971451" expanded="true" signature="6834:6909" ph="SELECT u_id user_accounts" />
-                <marker date="1516456971451" expanded="true" signature="8153:8228" ph="SELECT u_id user_accounts" />
+                <marker date="1518271308844" expanded="true" signature="507:683" ph="SELECT u1.na... user" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connection.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/connection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="twitter_func.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/twitter_func.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="512" column="61" lean-forward="false" selection-start-line="512" selection-start-column="61" selection-end-line="512" selection-end-column="61" />
-              <folding>
-                <marker date="1516459878646" expanded="true" signature="1952:1995" ph="SELECT ue_id... user_extended" />
-                <marker date="1516459878646" expanded="true" signature="2118:2177" ph="SELECT us_id... user_scores" />
-                <marker date="1516459878646" expanded="true" signature="2278:2355" ph="UPDATE user_... " />
-                <marker date="1516459878646" expanded="true" signature="2402:2475" ph="INSERT INTO user_scores... " />
-                <marker date="1516459878646" expanded="true" signature="2656:2696" ph="INSERT INTO user... " />
-                <marker date="1516459878646" expanded="true" signature="2789:2888" ph="INSERT INTO user_accounts... " />
-                <marker date="1516459878646" expanded="true" signature="2942:3004" ph="INSERT INTO user_extended... " />
-                <marker date="1516459878646" expanded="true" signature="3101:3166" ph="INSERT INTO user_scores... " />
-                <marker date="1516459878646" expanded="true" signature="7894:7966" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="8841:8908" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="11229:11302" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="13079:13152" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="13352:13421" ph="insert into social_responses... " />
-                <marker date="1516459878646" expanded="true" signature="16091:16164" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="18918:18991" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="20644:20689" ph="select * fro... ngo_social_objects" />
-                <marker date="1516459878646" expanded="true" signature="20799:20939" ph="insert into ngo_social_objects... " />
-                <marker date="1516459878646" expanded="true" signature="21753:21799" ph="select * fro... ngo_social_objects" />
-                <marker date="1516459878646" expanded="true" signature="21936:22076" ph="insert into ngo_social_objects... " />
-                <marker date="1516459878646" expanded="true" signature="22623:22696" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="24429:24475" ph="select * fro... ngo_social_objects" />
-                <marker date="1516459878646" expanded="true" signature="24612:24747" ph="insert into ngo_social_objects... " />
-                <marker date="1516459878646" expanded="true" signature="25645:25691" ph="select * fro... ngo_social_objects" />
-                <marker date="1516459878646" expanded="true" signature="25828:25971" ph="insert into ngo_social_objects... " />
-                <marker date="1516459878646" expanded="true" signature="26831:26904" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="27318:27391" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="28291:28337" ph="select * fro... ngo_social_objects" />
-                <marker date="1516459878646" expanded="true" signature="28474:28618" ph="insert into ngo_social_objects... " />
-                <marker date="1516459878646" expanded="true" signature="28949:28995" ph="select * fro... ngo_social_objects" />
-                <marker date="1516459878646" expanded="true" signature="29132:29276" ph="insert into ngo_social_objects... " />
-                <marker date="1516459878646" expanded="true" signature="29895:29968" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="30377:30450" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="32581:32654" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="34122:34195" ph="SELECT u_id user_accounts" />
-                <marker date="1516459878646" expanded="true" signature="35522:35595" ph="SELECT u_id user_accounts" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1629">
-              <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="26" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -153,73 +43,65 @@
       <file leaf-file-name="oauthlinks.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oauthlinks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+            <state relative-caret-position="204">
+              <caret line="12" column="106" lean-forward="false" selection-start-line="12" selection-start-column="106" selection-end-line="12" selection-end-column="106" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server.php">
+      <file leaf-file-name="fbscan.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fbscan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="3485">
+              <caret line="205" column="17" lean-forward="false" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
               <folding>
-                <marker date="1516466187835" expanded="true" signature="385:504" ph="INSERT INTO user... " />
-                <marker date="1516466187835" expanded="true" signature="613:666" ph="select ut_id... user_types" />
-                <marker date="1516466187835" expanded="true" signature="838:896" ph="insert into user_extended... " />
+                <marker date="1518271832561" expanded="true" signature="11376:11462" ph="UPDATE user_... " />
+                <marker date="1518271832561" expanded="true" signature="12322:12403" ph="UPDATE user_... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="score1.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/score1.php">
+      <file leaf-file-name="fbusers.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fbusers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="414" column="0" lean-forward="false" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
+            <state relative-caret-position="394">
+              <caret line="72" column="14" lean-forward="false" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
               <folding>
-                <marker date="1516442564171" expanded="true" signature="2383:2525" ph="SELECT u_id,... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="2799:2841" ph="SELECT name user" />
-                <marker date="1516442564171" expanded="true" signature="2986:3109" ph="SELECT score... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="3241:3363" ph="SELECT score... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="3805:3947" ph="SELECT u_id,... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="4221:4263" ph="SELECT name user" />
-                <marker date="1516442564171" expanded="true" signature="4446:4568" ph="SELECT score... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="4696:4856" ph="SELECT SUM(s... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="5264:5406" ph="SELECT u_id,... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="5680:5722" ph="SELECT name user" />
-                <marker date="1516442564171" expanded="true" signature="5874:5996" ph="SELECT score... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="6162:6322" ph="SELECT SUM(s... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="6746:6883" ph="SELECT u_id,... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="7157:7199" ph="SELECT name user" />
-                <marker date="1516442564171" expanded="true" signature="7344:7467" ph="SELECT score... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="7599:7721" ph="SELECT score... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="8165:8307" ph="SELECT u_id,... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="8581:8623" ph="SELECT name user" />
-                <marker date="1516442564171" expanded="true" signature="8806:8928" ph="SELECT score... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="9056:9216" ph="SELECT SUM(s... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="9622:9764" ph="SELECT u_id,... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="10038:10080" ph="SELECT name user" />
-                <marker date="1516442564171" expanded="true" signature="10232:10354" ph="SELECT score... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="10520:10680" ph="SELECT SUM(s... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="11077:11219" ph="SELECT u_id,... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="11493:11535" ph="SELECT name user" />
-                <marker date="1516442564171" expanded="true" signature="11952:12094" ph="SELECT u_id,... user_scores" />
-                <marker date="1516442564171" expanded="true" signature="12368:12410" ph="SELECT name user" />
+                <marker date="1518273547529" expanded="true" signature="243:419" ph="SELECT u1.na... user" />
+                <marker date="1518273547529" expanded="true" signature="1297:1399" ph="select us_id... user_scores" />
+                <marker date="1518273547529" expanded="true" signature="1351:1394" ph="select ue_id... user_extended" />
+                <marker date="1518273547529" expanded="true" signature="1351:1395" ph="select ue_id... user_extended" />
+                <marker date="1518273547529" expanded="true" signature="2159:2361" ph="SELECT DISTI... user" />
+                <marker date="1518273547529" expanded="true" signature="3058:3100" ph="SELECT u_id user_extended" />
+                <marker date="1518273547529" expanded="true" signature="3058:3116" ph="SELECT u_id user_extended" />
+                <marker date="1518273547529" expanded="true" signature="3476:3590" ph="select us_id... user_scores" />
+                <marker date="1518273547529" expanded="true" signature="3542:3585" ph="select ue_id... user_extended" />
+                <marker date="1518273547529" expanded="true" signature="3542:3586" ph="select ue_id... user_extended" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbconn.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbconn.php">
+      <file leaf-file-name="activity.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+            <state relative-caret-position="247">
+              <caret line="260" column="54" lean-forward="false" selection-start-line="260" selection-start-column="54" selection-end-line="260" selection-end-column="54" />
               <folding>
-                <marker date="1515814622468" expanded="true" signature="190:226" ph="SELECT * FRO... points" />
+                <marker date="1518272590060" expanded="true" signature="2224:2454" ph="SELECT * FRO... ngo_social_objects" />
+                <marker date="1518272590060" expanded="true" signature="2848:2899" ph="SELECT name user" />
+                <marker date="1518272590060" expanded="true" signature="3009:3075" ph="SELECT accou... user_accounts" />
+                <marker date="1518272590060" expanded="true" signature="3930:4147" ph="SELECT * FRO... ngo_social_objects" />
+                <marker date="1518272590060" expanded="true" signature="4541:4592" ph="SELECT name user" />
+                <marker date="1518272590060" expanded="true" signature="4702:4768" ph="SELECT accou... user_accounts" />
+                <marker date="1518272590060" expanded="true" signature="5625:5842" ph="SELECT * FRO... ngo_social_objects" />
+                <marker date="1518272590060" expanded="true" signature="6236:6287" ph="SELECT name user" />
+                <marker date="1518272590060" expanded="true" signature="6397:6463" ph="SELECT accou... user_accounts" />
+                <marker date="1518272590060" expanded="true" signature="7671:7815" ph="SELECT a.*, ngo_social_objects" />
+                <marker date="1518272590060" expanded="true" signature="8762:8906" ph="SELECT a.*, ngo_social_objects" />
+                <marker date="1518272590060" expanded="true" signature="9855:9999" ph="SELECT a.*, ngo_social_objects" />
               </folding>
             </state>
           </provider>
@@ -229,22 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>to,</find>
-      <find>'name'</find>
-      <find>scanshares</find>
-      <find>create</find>
-      <find>createForfetch</find>
-      <find>$pts</find>
-      <find>comments{from,message,message_tags,reactions}</find>
-      <find>fetchPeople</find>
-      <find>createForFetch(</find>
-      <find>no hello</find>
-      <find>scanTags(</find>
-      <find>$fbtoken</find>
-      <find>$fbuid</find>
-      <find>15</find>
-      <find>25</find>
-      <find>searchthisngotags</find>
       <find>['sw']</find>
       <find>'sw'</find>
       <find>&lt;b&gt;</find>
@@ -259,26 +125,27 @@
       <find>searchthisngo</find>
       <find>$db,</find>
       <find>$db</find>
+      <find>points</find>
+      <find>select * from points</find>
+      <find>$a1</find>
+      <find>profile_type</find>
+      <find>message_tags</find>
+      <find>getup</find>
+      <find>admins</find>
+      <find>'</find>
+      <find>,(array) $tdbg['scopes']</find>
+      <find>lastid</find>
+      <find>sourceid</find>
+      <find>extrascan2.php</find>
+      <find>source_id</find>
+      <find>social_response</find>
+      <find>at=facebook</find>
+      <find>extarscan.php</find>
     </findStrings>
     <replaceStrings>
-      <replace>$eventscore</replace>
-      <replace>$evn[</replace>
-      <replace>tag</replace>
-      <replace>['metadata']['type</replace>
-      <replace>$feedscore</replace>
-      <replace>isSWAccount(</replace>
-      <replace>isSWEvent(</replace>
-      <replace>isSWGroup(</replace>
-      <replace>respedge</replace>
-      <replace>respnode</replace>
-      <replace>cpost</replace>
-      <replace>members</replace>
-      <replace>tagged</replace>
-      <replace>to</replace>
       <replace>sharedposts{from,to,story,story_tags,message_tags,shares,place}</replace>
       <replace>$to</replace>
       <replace>{from,message,comments,message_tags,reactions}</replace>
-      <replace>comments</replace>
       <replace>ngo</replace>
       <replace>com</replace>
       <replace>,comments{from,message,comments,message_tags,reactions}.summary(true)</replace>
@@ -291,43 +158,77 @@
       <replace>$totf</replace>
       <replace>$conn,</replace>
       <replace>$conn</replace>
+      <replace>$a2</replace>
+      <replace>type</replace>
+      <replace>to</replace>
+      <replace>sharedposts</replace>
+      <replace>reactions</replace>
+      <replace>comments</replace>
+      <replace>roles</replace>
+      <replace>members</replace>
+      <replace>conversations</replace>
+      <replace>&quot;</replace>
+      <replace>,$scopes</replace>
+      <replace>extrascan2.php</replace>
+      <replace>extarscan.php</replace>
+      <replace>at=facebook&amp;ot='.$row['ot_type']</replace>
+      <replace>extrascan.php</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/fbga/fboauth.php" />
-        <option value="$PROJECT_DIR$/fbga/vendor/facebook/graph-sdk/src/Facebook/FacebookBatchRequest.php" />
         <option value="$PROJECT_DIR$/temp.php" />
         <option value="$PROJECT_DIR$/tempo.php" />
-        <option value="$PROJECT_DIR$/fbtoken.php" />
         <option value="$PROJECT_DIR$/fbscan1.php" />
         <option value="$PROJECT_DIR$/pagescan.php" />
-        <option value="$PROJECT_DIR$/fbinit.php" />
-        <option value="$PROJECT_DIR$/nlp.php" />
-        <option value="$PROJECT_DIR$/mtest.php" />
         <option value="$PROJECT_DIR$/fbapi/vendor/facebook/graph-sdk/src/Facebook/GraphNodes/Collection.php" />
-        <option value="$PROJECT_DIR$/fbglobals.php" />
         <option value="$PROJECT_DIR$/score.php" />
-        <option value="$PROJECT_DIR$/dbconn.php" />
-        <option value="$PROJECT_DIR$/fboauth.php" />
-        <option value="$PROJECT_DIR$/fbngoscan.php" />
-        <option value="$PROJECT_DIR$/fbfunc.php" />
-        <option value="$PROJECT_DIR$/fbscan.php" />
-        <option value="$PROJECT_DIR$/fbngofunc.php" />
-        <option value="$PROJECT_DIR$/fbusers.php" />
         <option value="$PROJECT_DIR$/../sci3p/server.php" />
         <option value="$PROJECT_DIR$/../sci3p/fboauth.php" />
         <option value="$PROJECT_DIR$/../sci3p/fbtoken.php" />
         <option value="$PROJECT_DIR$/../sci3p/callback.php" />
         <option value="$PROJECT_DIR$/score1.php" />
         <option value="$PROJECT_DIR$/../twit/connection.php" />
-        <option value="$PROJECT_DIR$/extrascan.php" />
         <option value="$PROJECT_DIR$/extra_scan_func.php" />
         <option value="$PROJECT_DIR$/twitter_func.php" />
         <option value="$PROJECT_DIR$/register.php" />
-        <option value="$PROJECT_DIR$/oauthlinks.php" />
+        <option value="$PROJECT_DIR$/points.php" />
+        <option value="$PROJECT_DIR$/dbconn.php" />
+        <option value="$PROJECT_DIR$/extrascan1.php" />
+        <option value="$PROJECT_DIR$/fbglobals.php" />
+        <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/score2.php" />
+        <option value="$PROJECT_DIR$/per_cal1.php" />
+        <option value="$PROJECT_DIR$/redirect.php" />
         <option value="$PROJECT_DIR$/server.php" />
+        <option value="$PROJECT_DIR$/fboauth.php" />
+        <option value="$PROJECT_DIR$/donate1.php" />
+        <option value="$PROJECT_DIR$/score4.php" />
+        <option value="$PROJECT_DIR$/fbngoscan.php" />
+        <option value="$PROJECT_DIR$/extrascan2.php" />
+        <option value="$PROJECT_DIR$/mtest.php" />
+        <option value="$PROJECT_DIR$/home1.php" />
+        <option value="$PROJECT_DIR$/fbngofunc.php" />
+        <option value="$PROJECT_DIR$/fbfunc.php" />
+        <option value="$PROJECT_DIR$/social_object.php" />
+        <option value="$PROJECT_DIR$/fbtoken.php" />
+        <option value="$PROJECT_DIR$/fbpost.php" />
+        <option value="$PROJECT_DIR$/nlp.php" />
+        <option value="$PROJECT_DIR$/twitter_extrascan.php" />
+        <option value="$PROJECT_DIR$/twitter_points.php" />
+        <option value="$PROJECT_DIR$/twitter_regulr_scan_func.php" />
+        <option value="$PROJECT_DIR$/twitter_update_record.php" />
+        <option value="$PROJECT_DIR$/per_cal2.php" />
+        <option value="$PROJECT_DIR$/twitter_callback.php" />
+        <option value="$PROJECT_DIR$/twitter_main.php" />
+        <option value="$PROJECT_DIR$/twitter_timeline_func.php" />
+        <option value="$PROJECT_DIR$/extrascan.php" />
+        <option value="$PROJECT_DIR$/fbinit.php" />
+        <option value="$PROJECT_DIR$/oauthlinks.php" />
+        <option value="$PROJECT_DIR$/fbusers.php" />
+        <option value="$PROJECT_DIR$/fbscan.php" />
+        <option value="$PROJECT_DIR$/activity.php" />
       </list>
     </option>
   </component>
@@ -373,8 +274,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -501,18 +402,40 @@
       <workItem from="1516185845242" duration="18227000" />
       <workItem from="1516271825829" duration="9913000" />
       <workItem from="1516350880193" duration="26592000" />
-      <workItem from="1516441191413" duration="9787000" />
+      <workItem from="1516441191413" duration="10386000" />
+      <workItem from="1516614404089" duration="7682000" />
+      <workItem from="1516706123404" duration="10587000" />
+      <workItem from="1516764650367" duration="11942000" />
+      <workItem from="1516877253271" duration="18183000" />
+      <workItem from="1516959303015" duration="13654000" />
+      <workItem from="1517052446367" duration="9949000" />
+      <workItem from="1517140700500" duration="7434000" />
+      <workItem from="1517228307877" duration="9785000" />
+      <workItem from="1517372218712" duration="7429000" />
+      <workItem from="1517395444020" duration="1788000" />
+      <workItem from="1517490522453" duration="2049000" />
+      <workItem from="1517572951502" duration="6997000" />
+      <workItem from="1517745366182" duration="6458000" />
+      <workItem from="1517827095666" duration="17949000" />
+      <workItem from="1517891577566" duration="5639000" />
+      <workItem from="1517913809122" duration="12904000" />
+      <workItem from="1518019560394" duration="2006000" />
+      <workItem from="1518151967982" duration="3961000" />
+      <workItem from="1518168340100" duration="14167000" />
+      <workItem from="1518224721344" duration="3409000" />
+      <workItem from="1518240198579" duration="13501000" />
+      <workItem from="1518273620261" duration="9000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="565482000" />
+    <option name="totallyTimeSpent" value="753563000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13615733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28971255" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -526,7 +449,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -535,12 +458,12 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12556732" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -558,518 +481,390 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fbscan.php">
+    <entry file="file://$PROJECT_DIR$/callback.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-29">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1516371416360" expanded="true" signature="7988:8036" ph="UPDATE user_... " />
-            <marker date="1516371416360" expanded="true" signature="7988:8062" ph="UPDATE user_... " />
-            <marker date="1516371416360" expanded="true" signature="7988:8074" ph="UPDATE user_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbtoken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fboauth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbinit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbscan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1516371416360" expanded="true" signature="7988:8036" ph="UPDATE user_... " />
-            <marker date="1516371416360" expanded="true" signature="7988:8062" ph="UPDATE user_... " />
-            <marker date="1516371416360" expanded="true" signature="7988:8074" ph="UPDATE user_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbtoken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fboauth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbinit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbscan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <marker date="1516371416360" expanded="true" signature="7988:8036" ph="UPDATE user_... " />
-            <marker date="1516371416360" expanded="true" signature="7988:8062" ph="UPDATE user_... " />
-            <marker date="1516371416360" expanded="true" signature="7988:8074" ph="UPDATE user_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbga/vendor/facebook/graph-sdk/src/Facebook/FacebookBatchRequest.php" />
-    <entry file="file://$PROJECT_DIR$/fbtoken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fboauth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbinit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbga/fboauth.php" />
-    <entry file="file://$PROJECT_DIR$/fbga/vendor/facebook/graph-sdk/src/Facebook/Facebook.php" />
-    <entry file="file://$PROJECT_DIR$/fbga/vendor/facebook/graph-sdk/src/Facebook/FacebookBatchRequest.php" />
-    <entry file="file://$PROJECT_DIR$/temp.php" />
-    <entry file="file://$PROJECT_DIR$/tempo.php" />
-    <entry file="file://$PROJECT_DIR$/fbapi/vendor/facebook/graph-sdk/src/Facebook/HttpClients/FacebookCurl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1281">
-          <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbapi/vendor/facebook/graph-sdk/src/Facebook/HttpClients/FacebookCurlHttpClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-73">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbscan1.php" />
-    <entry file="file://$PROJECT_DIR$/pagescan.php" />
-    <entry file="file://$PROJECT_DIR$/nlp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mtest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding>
-            <marker date="1514181828012" expanded="true" signature="191:232" ph="SELECT us_id... user_scores" />
-            <marker date="1514181828012" expanded="true" signature="191:233" ph="SELECT us_id... user_scores" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbapi/vendor/facebook/graph-sdk/src/Facebook/GraphNodes/Collection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="199" column="5" lean-forward="false" selection-start-line="199" selection-start-column="5" selection-end-line="199" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/score.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="177" lean-forward="false" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="177" />
-          <folding>
-            <marker date="1514444940596" expanded="true" signature="1060:1197" ph="SELECT u_id,... user_scores" />
-            <marker date="1514444940596" expanded="true" signature="1471:1513" ph="SELECT name user" />
-            <marker date="1514444940596" expanded="true" signature="1658:1781" ph="SELECT score... user_scores" />
-            <marker date="1514444940596" expanded="true" signature="1913:2035" ph="SELECT score... user_scores" />
-            <marker date="1514444940596" expanded="true" signature="2493:2630" ph="SELECT u_id,... user_scores" />
-            <marker date="1514444940596" expanded="true" signature="2904:2946" ph="SELECT name user" />
-            <marker date="1514444940596" expanded="true" signature="3091:3214" ph="SELECT score... user_scores" />
-            <marker date="1514444940596" expanded="true" signature="3346:3468" ph="SELECT score... user_scores" />
-            <marker date="1514444940596" expanded="true" signature="3922:4059" ph="SELECT u_id,... user_scores" />
-            <marker date="1514444940596" expanded="true" signature="4333:4375" ph="SELECT name user" />
-            <marker date="1514444940596" expanded="true" signature="4520:4643" ph="SELECT score... user_scores" />
-            <marker date="1514444940596" expanded="true" signature="4775:4897" ph="SELECT score... user_scores" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbtoken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="11" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbglobals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbinit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="2" lean-forward="false" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fboauth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbngoscan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding>
-            <marker date="1516188987838" expanded="true" signature="427:608" ph="SELECT n.*, ngo_social_objects" />
-            <marker date="1516188987838" expanded="true" signature="1478:1702" ph="SELECT DISTI... ngo_social_objects" />
-            <marker date="1516188987838" expanded="true" signature="2556:2621" ph="SELECT accou... user_accounts" />
-            <marker date="1516188987838" expanded="true" signature="2736:2798" ph="SELECT * FRO... ngo_social_objects" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbfunc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="510" column="28" lean-forward="true" selection-start-line="510" selection-start-column="28" selection-end-line="510" selection-end-column="28" />
-          <folding>
-            <marker date="1516368329938" expanded="true" signature="640:678" ph="SELECT ns_id... ngo_social_objects" />
-            <marker date="1516368329938" expanded="true" signature="925:961" ph="SELECT t1.ns... ngo_social_objects" />
-            <marker date="1516368329938" expanded="true" signature="925:979" ph="SELECT ns_id... tgis_ngo_accs_view" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbscan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2193">
-          <caret line="129" column="9" lean-forward="false" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
-          <folding>
-            <marker date="1516371416360" expanded="true" signature="7988:8036" ph="UPDATE user_... " />
-            <marker date="1516371416360" expanded="true" signature="7988:8062" ph="UPDATE user_... " />
-            <marker date="1516371416360" expanded="true" signature="7988:8074" ph="UPDATE user_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbusers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1516373375859" expanded="true" signature="214:390" ph="SELECT u1.na... user" />
-            <marker date="1516373375859" expanded="true" signature="991:1093" ph="select us_id... user_scores" />
-            <marker date="1516373375859" expanded="true" signature="1045:1088" ph="select ue_id... user_extended" />
-            <marker date="1516373375859" expanded="true" signature="1045:1089" ph="select ue_id... user_extended" />
-            <marker date="1516373375859" expanded="true" signature="1713:1915" ph="SELECT DISTI... user" />
-            <marker date="1516373375859" expanded="true" signature="2373:2415" ph="SELECT u_id user_extended" />
-            <marker date="1516373375859" expanded="true" signature="2373:2431" ph="SELECT u_id user_extended" />
-            <marker date="1516373375859" expanded="true" signature="2725:2827" ph="select us_id... user_scores" />
-            <marker date="1516373375859" expanded="true" signature="2779:2822" ph="select ue_id... user_extended" />
-            <marker date="1516373375859" expanded="true" signature="2779:2823" ph="select ue_id... user_extended" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sci3p/callback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sci3p/fbtoken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="87" column="65" lean-forward="false" selection-start-line="87" selection-start-column="65" selection-end-line="87" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sci3p/fboauth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sci3p/server.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sci3p/fbinit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/score1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="414" column="0" lean-forward="false" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
-          <folding>
-            <marker date="1516442564171" expanded="true" signature="2383:2525" ph="SELECT u_id,... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="2799:2841" ph="SELECT name user" />
-            <marker date="1516442564171" expanded="true" signature="2986:3109" ph="SELECT score... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="3241:3363" ph="SELECT score... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="3805:3947" ph="SELECT u_id,... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="4221:4263" ph="SELECT name user" />
-            <marker date="1516442564171" expanded="true" signature="4446:4568" ph="SELECT score... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="4696:4856" ph="SELECT SUM(s... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="5264:5406" ph="SELECT u_id,... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="5680:5722" ph="SELECT name user" />
-            <marker date="1516442564171" expanded="true" signature="5874:5996" ph="SELECT score... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="6162:6322" ph="SELECT SUM(s... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="6746:6883" ph="SELECT u_id,... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="7157:7199" ph="SELECT name user" />
-            <marker date="1516442564171" expanded="true" signature="7344:7467" ph="SELECT score... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="7599:7721" ph="SELECT score... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="8165:8307" ph="SELECT u_id,... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="8581:8623" ph="SELECT name user" />
-            <marker date="1516442564171" expanded="true" signature="8806:8928" ph="SELECT score... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="9056:9216" ph="SELECT SUM(s... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="9622:9764" ph="SELECT u_id,... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="10038:10080" ph="SELECT name user" />
-            <marker date="1516442564171" expanded="true" signature="10232:10354" ph="SELECT score... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="10520:10680" ph="SELECT SUM(s... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="11077:11219" ph="SELECT u_id,... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="11493:11535" ph="SELECT name user" />
-            <marker date="1516442564171" expanded="true" signature="11952:12094" ph="SELECT u_id,... user_scores" />
-            <marker date="1516442564171" expanded="true" signature="12368:12410" ph="SELECT name user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbconn.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-          <folding>
-            <marker date="1515814622468" expanded="true" signature="190:226" ph="SELECT * FRO... points" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../twit/connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbngofunc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="554" column="16" lean-forward="false" selection-start-line="554" selection-start-column="16" selection-end-line="554" selection-end-column="16" />
-          <folding>
-            <marker date="1516372272970" expanded="true" signature="25814:25854" ph="INSERT INTO user... " />
-            <marker date="1516372272970" expanded="true" signature="25970:26062" ph="INSERT INTO user_accounts... " />
-            <marker date="1516372272970" expanded="true" signature="26138:26200" ph="INSERT INTO user_extended... " />
-            <marker date="1516372272970" expanded="true" signature="26335:26400" ph="INSERT INTO user_scores... " />
-            <marker date="1516372272970" expanded="true" signature="26962:27005" ph="SELECT ue_id... user_extended" />
-            <marker date="1516372272970" expanded="true" signature="26962:27021" ph="SELECT ue_id... user_extended" />
-            <marker date="1516372272970" expanded="true" signature="27208:27268" ph="SELECT ue_id... user_extended" />
-            <marker date="1516372272970" expanded="true" signature="27331:27374" ph="SELECT ue_id... user_extended" />
-            <marker date="1516372272970" expanded="true" signature="27514:27545" ph="SELECT us_id... user_scores" />
-            <marker date="1516372272970" expanded="true" signature="27514:27556" ph="SELECT us_id... user_scores" />
-            <marker date="1516372272970" expanded="true" signature="27514:27557" ph="SELECT us_id... user_scores" />
-            <marker date="1516372272970" expanded="true" signature="27514:27573" ph="SELECT us_id... user_scores" />
-            <marker date="1516372272970" expanded="true" signature="27701:27736" ph="UPDATE user_... " />
-            <marker date="1516372272970" expanded="true" signature="27701:27737" ph="UPDATE user_... " />
-            <marker date="1516372272970" expanded="true" signature="27701:27752" ph="UPDATE user_... " />
-            <marker date="1516372272970" expanded="true" signature="27701:27753" ph="UPDATE user_... " />
-            <marker date="1516372272970" expanded="true" signature="27701:27754" ph="UPDATE user_... " />
-            <marker date="1516372272970" expanded="true" signature="27701:27770" ph="UPDATE user_... " />
-            <marker date="1516372272970" expanded="true" signature="27836:27901" ph="INSERT INTO user_scores... " />
-            <marker date="1516372272970" expanded="true" signature="29091:29150" ph="SELECT ot_id... social_object_types" />
-            <marker date="1516372272970" expanded="true" signature="29277:29461" ph="INSERT INTO ngo_social_objects... " />
-            <marker date="1516372272970" expanded="true" signature="29577:29625" ph="UPDATE ngo_s... " />
-            <marker date="1516372272970" expanded="true" signature="29577:29642" ph="UPDATE ngo_s... " />
-            <marker date="1516372272970" expanded="true" signature="29577:29643" ph="UPDATE ngo_s... " />
-            <marker date="1516372272970" expanded="true" signature="30790:30843" ph="SELECT COUNT... user_accounts" />
-            <marker date="1516372272970" expanded="true" signature="30790:30855" ph="SELECT COUNT... " />
-            <marker date="1516372272970" expanded="true" signature="30998:31052" ph="SELECT COUNT... " />
-            <marker date="1516372272970" expanded="true" signature="30998:31064" ph="SELECT ns_id... ngo_social_objects" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/in.php" />
+    <entry file="file://$PROJECT_DIR$/main.php" />
+    <entry file="file://$PROJECT_DIR$/points.php" />
+    <entry file="file://$PROJECT_DIR$/dbconn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extrascan1.php" />
+    <entry file="file://$PROJECT_DIR$/fbglobals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/score2.php" />
+    <entry file="file://$PROJECT_DIR$/score1.php" />
+    <entry file="file://$PROJECT_DIR$/per_cal1.php" />
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2159">
+          <caret line="127" column="6" lean-forward="true" selection-start-line="127" selection-start-column="6" selection-end-line="127" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/donate1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/score1 (3).php" />
+    <entry file="file://$PROJECT_DIR$/score3.php" />
+    <entry file="file://$PROJECT_DIR$/score4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7650">
+          <caret line="450" column="127" lean-forward="false" selection-start-line="450" selection-start-column="127" selection-end-line="450" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_scan_func.php" />
+    <entry file="file://$PROJECT_DIR$/mtest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+          <folding>
+            <marker date="1517946528558" expanded="true" signature="221:262" ph="SELECT us_id... user_scores" />
+            <marker date="1517946528558" expanded="true" signature="221:263" ph="SELECT us_id... user_scores" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="58" column="117" lean-forward="false" selection-start-line="58" selection-start-column="117" selection-end-line="58" selection-end-column="117" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extrascan.php">
+    <entry file="file://$PROJECT_DIR$/fboauth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fbtoken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="102" column="38" lean-forward="false" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
           <folding>
-            <marker date="1516456705782" expanded="true" signature="1001:1145" ph="SELECT a.acc... user_accounts" />
+            <marker date="1518184008816" expanded="true" signature="2900:2955" ph="SELECT * FRO... user_accounts" />
+            <marker date="1518184008816" expanded="true" signature="3093:3155" ph="UPDATE user_... " />
+            <marker date="1518184008816" expanded="true" signature="3249:3418" ph="INSERT INTO user_accounts... " />
+            <marker date="1518184008816" expanded="true" signature="3614:3783" ph="INSERT INTO user_accounts... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extra_scan_func.php">
+    <entry file="file://$PROJECT_DIR$/fbpost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="338" column="24" lean-forward="false" selection-start-line="338" selection-start-column="24" selection-end-line="338" selection-end-column="24" />
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fbfunc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding>
-            <marker date="1516456971451" expanded="true" signature="1014:1085" ph="SELECT u_id user_accounts" />
-            <marker date="1516456971451" expanded="true" signature="2188:2263" ph="SELECT u_id user_accounts" />
-            <marker date="1516456971451" expanded="true" signature="3381:3456" ph="SELECT u_id user_accounts" />
-            <marker date="1516456971451" expanded="true" signature="4645:4720" ph="SELECT u_id user_accounts" />
-            <marker date="1516456971451" expanded="true" signature="5670:5745" ph="SELECT u_id user_accounts" />
-            <marker date="1516456971451" expanded="true" signature="6834:6909" ph="SELECT u_id user_accounts" />
-            <marker date="1516456971451" expanded="true" signature="8153:8228" ph="SELECT u_id user_accounts" />
+            <marker date="1518183019656" expanded="true" signature="640:678" ph="SELECT so_na... this_ngo_accs_view" />
+            <marker date="1518183019656" expanded="true" signature="925:979" ph="SELECT ns_id... this_ngo_accs_view" />
+            <marker date="1518183019656" expanded="true" signature="12942:13001" ph="SELECT so_to... this_ngo_accs_view" />
+            <marker date="1518183019656" expanded="true" signature="15598:15650" ph="SELECT so_to... this_ngo_accs_view" />
+            <marker date="1518183019656" expanded="true" signature="15598:15651" ph="SELECT so_to... this_ngo_accs_view" />
+            <marker date="1518183019656" expanded="true" signature="15598:15652" ph="SELECT so_to... this_ngo_accs_view" />
+            <marker date="1518183019656" expanded="true" signature="15598:15656" ph="SELECT so_to... this_ngo_accs_view" />
+            <marker date="1518183019656" expanded="true" signature="15598:15657" ph="SELECT so_to... this_ngo_accs_view" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/server.php">
+    <entry file="file://$PROJECT_DIR$/twitter_extrascan.php" />
+    <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="68">
+          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redirect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nlp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="12" column="99" lean-forward="false" selection-start-line="12" selection-start-column="99" selection-end-line="12" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extrascan2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+          <folding>
+            <marker date="1517946481878" expanded="true" signature="1031:1175" ph="SELECT a.acc... user_accounts" />
+            <marker date="1517946481878" expanded="true" signature="1997:2049" ph="SELECT * FRO... ngo_social_objects" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/social_object.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="237" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="237" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter_update_record.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="87" column="24" lean-forward="false" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fbngofunc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="275" column="92" lean-forward="false" selection-start-line="275" selection-start-column="92" selection-end-line="275" selection-end-column="92" />
+          <folding>
+            <marker date="1518173440908" expanded="true" signature="1153:1233" ph="SELECT * FRO... social_responses" />
+            <marker date="1518173440908" expanded="true" signature="6303:6361" ph="UPDATE socia... " />
+            <marker date="1518173440908" expanded="true" signature="6415:6509" ph="INSERT INTO social_responses... " />
+            <marker date="1518173440908" expanded="true" signature="7567:7647" ph="SELECT * FRO... social_responses" />
+            <marker date="1518173440908" expanded="true" signature="11202:11260" ph="UPDATE socia... " />
+            <marker date="1518173440908" expanded="true" signature="11314:11408" ph="INSERT INTO social_responses... " />
+            <marker date="1518173440908" expanded="true" signature="14709:14786" ph="SELECT * FRO... social_responses" />
+            <marker date="1518173440908" expanded="true" signature="19848:19906" ph="UPDATE socia... " />
+            <marker date="1518173440908" expanded="true" signature="19960:20051" ph="INSERT INTO social_responses... " />
+            <marker date="1518173440908" expanded="true" signature="20450:20527" ph="SELECT * FRO... social_responses" />
+            <marker date="1518173440908" expanded="true" signature="20894:20952" ph="UPDATE socia... " />
+            <marker date="1518173440908" expanded="true" signature="21072:21162" ph="INSERT INTO social_responses... " />
+            <marker date="1518173440908" expanded="true" signature="32041:32081" ph="INSERT INTO user... " />
+            <marker date="1518173440908" expanded="true" signature="32197:32289" ph="INSERT INTO user_accounts... " />
+            <marker date="1518173440908" expanded="true" signature="32365:32427" ph="INSERT INTO user_extended... " />
+            <marker date="1518173440908" expanded="true" signature="32562:32627" ph="INSERT INTO user_scores... " />
+            <marker date="1518173440908" expanded="true" signature="33189:33248" ph="SELECT ue_id... user_extended" />
+            <marker date="1518173440908" expanded="true" signature="33435:33495" ph="SELECT ue_id... user_extended" />
+            <marker date="1518173440908" expanded="true" signature="33558:33601" ph="SELECT ue_id... user_extended" />
+            <marker date="1518173440908" expanded="true" signature="33741:33800" ph="SELECT us_id... user_scores" />
+            <marker date="1518173440908" expanded="true" signature="33928:33997" ph="UPDATE user_... " />
+            <marker date="1518173440908" expanded="true" signature="34063:34128" ph="INSERT INTO user_scores... " />
+            <marker date="1518173440908" expanded="true" signature="35349:35408" ph="SELECT ot_id... social_object_types" />
+            <marker date="1518173440908" expanded="true" signature="35535:35719" ph="INSERT INTO ngo_social_objects... " />
+            <marker date="1518173440908" expanded="true" signature="36004:36080" ph="UPDATE ngo_s... " />
+            <marker date="1518173440908" expanded="true" signature="36170:36235" ph="UPDATE ngo_s... " />
+            <marker date="1518173440908" expanded="true" signature="37401:37466" ph="SELECT u_id user_accounts" />
+            <marker date="1518173440908" expanded="true" signature="37609:37675" ph="SELECT ns_id... ngo_social_objects" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter_func.php" />
+    <entry file="file://$PROJECT_DIR$/per_cal2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="47" column="1" lean-forward="true" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter_callback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter_extra_scan_func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1516464422284" expanded="true" signature="496:615" ph="INSERT INTO user... " />
-            <marker date="1516464422284" expanded="true" signature="720:773" ph="select ut_id... user_types" />
-            <marker date="1516464422284" expanded="true" signature="941:999" ph="insert into user_extended... " />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twitter_func.php">
+    <entry file="file://$PROJECT_DIR$/twitter_func_defbyme.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="512" column="61" lean-forward="false" selection-start-line="512" selection-start-column="61" selection-end-line="512" selection-end-column="61" />
+        <state relative-caret-position="-12">
+          <caret line="72" column="1" lean-forward="true" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter_list_func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter_points.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter_regulr_scan_func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter_scan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter_timeline_func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="521" column="21" lean-forward="true" selection-start-line="521" selection-start-column="21" selection-end-line="521" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fbngoscan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="44" column="28" lean-forward="true" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fbinit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
           <folding>
-            <marker date="1516459878646" expanded="true" signature="1952:1995" ph="SELECT ue_id... user_extended" />
-            <marker date="1516459878646" expanded="true" signature="2118:2177" ph="SELECT us_id... user_scores" />
-            <marker date="1516459878646" expanded="true" signature="2278:2355" ph="UPDATE user_... " />
-            <marker date="1516459878646" expanded="true" signature="2402:2475" ph="INSERT INTO user_scores... " />
-            <marker date="1516459878646" expanded="true" signature="2656:2696" ph="INSERT INTO user... " />
-            <marker date="1516459878646" expanded="true" signature="2789:2888" ph="INSERT INTO user_accounts... " />
-            <marker date="1516459878646" expanded="true" signature="2942:3004" ph="INSERT INTO user_extended... " />
-            <marker date="1516459878646" expanded="true" signature="3101:3166" ph="INSERT INTO user_scores... " />
-            <marker date="1516459878646" expanded="true" signature="7894:7966" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="8841:8908" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="11229:11302" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="13079:13152" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="13352:13421" ph="insert into social_responses... " />
-            <marker date="1516459878646" expanded="true" signature="16091:16164" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="18918:18991" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="20644:20689" ph="select * fro... ngo_social_objects" />
-            <marker date="1516459878646" expanded="true" signature="20799:20939" ph="insert into ngo_social_objects... " />
-            <marker date="1516459878646" expanded="true" signature="21753:21799" ph="select * fro... ngo_social_objects" />
-            <marker date="1516459878646" expanded="true" signature="21936:22076" ph="insert into ngo_social_objects... " />
-            <marker date="1516459878646" expanded="true" signature="22623:22696" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="24429:24475" ph="select * fro... ngo_social_objects" />
-            <marker date="1516459878646" expanded="true" signature="24612:24747" ph="insert into ngo_social_objects... " />
-            <marker date="1516459878646" expanded="true" signature="25645:25691" ph="select * fro... ngo_social_objects" />
-            <marker date="1516459878646" expanded="true" signature="25828:25971" ph="insert into ngo_social_objects... " />
-            <marker date="1516459878646" expanded="true" signature="26831:26904" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="27318:27391" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="28291:28337" ph="select * fro... ngo_social_objects" />
-            <marker date="1516459878646" expanded="true" signature="28474:28618" ph="insert into ngo_social_objects... " />
-            <marker date="1516459878646" expanded="true" signature="28949:28995" ph="select * fro... ngo_social_objects" />
-            <marker date="1516459878646" expanded="true" signature="29132:29276" ph="insert into ngo_social_objects... " />
-            <marker date="1516459878646" expanded="true" signature="29895:29968" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="30377:30450" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="32581:32654" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="34122:34195" ph="SELECT u_id user_accounts" />
-            <marker date="1516459878646" expanded="true" signature="35522:35595" ph="SELECT u_id user_accounts" />
+            <marker date="1518271308844" expanded="true" signature="507:683" ph="SELECT u1.na... user" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oauthlinks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        <state relative-caret-position="204">
+          <caret line="12" column="106" lean-forward="false" selection-start-line="12" selection-start-column="106" selection-end-line="12" selection-end-column="106" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
+    <entry file="file://$PROJECT_DIR$/fbscan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1629">
-          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="3485">
+          <caret line="205" column="17" lean-forward="false" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
           <folding>
-            <marker date="1516466187835" expanded="true" signature="385:504" ph="INSERT INTO user... " />
-            <marker date="1516466187835" expanded="true" signature="613:666" ph="select ut_id... user_types" />
-            <marker date="1516466187835" expanded="true" signature="838:896" ph="insert into user_extended... " />
+            <marker date="1518271832561" expanded="true" signature="11376:11462" ph="UPDATE user_... " />
+            <marker date="1518271832561" expanded="true" signature="12322:12403" ph="UPDATE user_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extrascan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1518271040207" expanded="true" signature="1706:1794" ph="SELECT * FRO... ngo_social_objects" />
+            <marker date="1518271040207" expanded="true" signature="6000:6041" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="260" column="54" lean-forward="false" selection-start-line="260" selection-start-column="54" selection-end-line="260" selection-end-column="54" />
+          <folding>
+            <marker date="1518272590060" expanded="true" signature="2224:2454" ph="SELECT * FRO... ngo_social_objects" />
+            <marker date="1518272590060" expanded="true" signature="2848:2899" ph="SELECT name user" />
+            <marker date="1518272590060" expanded="true" signature="3009:3075" ph="SELECT accou... user_accounts" />
+            <marker date="1518272590060" expanded="true" signature="3930:4147" ph="SELECT * FRO... ngo_social_objects" />
+            <marker date="1518272590060" expanded="true" signature="4541:4592" ph="SELECT name user" />
+            <marker date="1518272590060" expanded="true" signature="4702:4768" ph="SELECT accou... user_accounts" />
+            <marker date="1518272590060" expanded="true" signature="5625:5842" ph="SELECT * FRO... ngo_social_objects" />
+            <marker date="1518272590060" expanded="true" signature="6236:6287" ph="SELECT name user" />
+            <marker date="1518272590060" expanded="true" signature="6397:6463" ph="SELECT accou... user_accounts" />
+            <marker date="1518272590060" expanded="true" signature="7671:7815" ph="SELECT a.*, ngo_social_objects" />
+            <marker date="1518272590060" expanded="true" signature="8762:8906" ph="SELECT a.*, ngo_social_objects" />
+            <marker date="1518272590060" expanded="true" signature="9855:9999" ph="SELECT a.*, ngo_social_objects" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fbusers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="72" column="14" lean-forward="false" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
+          <folding>
+            <marker date="1518273547529" expanded="true" signature="243:419" ph="SELECT u1.na... user" />
+            <marker date="1518273547529" expanded="true" signature="1297:1399" ph="select us_id... user_scores" />
+            <marker date="1518273547529" expanded="true" signature="1351:1394" ph="select ue_id... user_extended" />
+            <marker date="1518273547529" expanded="true" signature="1351:1395" ph="select ue_id... user_extended" />
+            <marker date="1518273547529" expanded="true" signature="2159:2361" ph="SELECT DISTI... user" />
+            <marker date="1518273547529" expanded="true" signature="3058:3100" ph="SELECT u_id user_extended" />
+            <marker date="1518273547529" expanded="true" signature="3058:3116" ph="SELECT u_id user_extended" />
+            <marker date="1518273547529" expanded="true" signature="3476:3590" ph="select us_id... user_scores" />
+            <marker date="1518273547529" expanded="true" signature="3542:3585" ph="select ue_id... user_extended" />
+            <marker date="1518273547529" expanded="true" signature="3542:3586" ph="select ue_id... user_extended" />
           </folding>
         </state>
       </provider>

@@ -8,9 +8,15 @@
 session_start();
 
 include_once 'dbconn.php';
+include_once 'fbinit.php';
 
+/*
 $id = '1774494506184449';
 $q1 = mysqli_query($conn,"SELECT us_id FROM user_scores WHERE u_id=1");
 $row = mysqli_fetch_array($q1);
 print_r($row);
 if($row['us_id']==null) echo "sdcs";
+*/
+
+include_once'per_cal2.php';
+per_cal();

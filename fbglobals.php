@@ -27,6 +27,9 @@ $thisngoid = array('1774494506184449');
 
 $thisngo = array('this_ngo');
 
-$fbcats = array('non-governmental organization (ngo)','nonprofit organization','social service','charity organization');
+$fbcats = array('non-governmental organization (ngo)','nonprofit organization','social service','charity organization',
+                'non-governmental organisation (ngo)', 'nonprofit organisation', 'charity organisation', 'charity');
+
+$adminsarr = array();
 
 //$ngo = 1;

@@ -58,6 +58,6 @@ else {
 
 }
 
-$conn->close();
+
 ?>
 

@@ -1,7 +1,10 @@
 <?php
-
+ob_start();
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 session_start();
 include_once 'fbinit.php';
+include_once 'dbconn.php';
 
 
 $helper = $fb->getRedirectLoginHelper();
@@ -15,6 +18,7 @@ try {
 } catch(Facebook\Exceptions\FacebookSDKException $e) {
     // When validation fails or other local issues
     echo 'Facebook SDK returned an error: ' . $e->getMessage();
+    var_dump($helper->getError());
     exit;
 }
 
@@ -68,7 +72,7 @@ $udetails = $fb->get('/me?fields=id,name', $_SESSION['fb_access_token']);
 $ud = $udetails->getGraphNode();
 
 $fb_uid=$_SESSION['fb_uid'] = $ud['id'];
-$fb_uname=$_SESSION['fb_uname'] = $ud['name'];
+$fb_uname=$_SESSION['fb_uname'] = mysqli_real_escape_string($conn,$ud['name']);
 
 $perm           =   $fb->get('/'.$_SESSION["fb_uid"].'/permissions',$accessToken);
 $perm           =   $perm->getGraphEdge();
@@ -80,31 +84,38 @@ if($expdate!=null)
 $fb_date=$_SESSION['fb_token_exp'] = $exp;
 
 $uid=$_SESSION['u_id'];
-echo "abcd".$uid;
 
-$db = mysqli_connect('localhost', 'root', '', 'sci3');
-
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
-} 
-
-$res = mysqli_query($db,"INSERT INTO user_accounts (u_id,at_id,account_id,account_name,account_token,token_expiry,account_secret)
+if(isset($_SESSION['fbpost']) && $_SESSION['fbpost']=='true') {
+    $res1 = mysqli_query($conn, "SELECT * FROM user_accounts WHERE u_id=$uid and at_id=1");
+    if (mysqli_num_rows($res1) > 0) {
+        $r = mysqli_fetch_array($res1);
+        $rid = $r['a_id'];
+        mysqli_query($conn, "UPDATE user_accounts SET account_token='$fb_token' WHERE a_id=$rid");
+        echo mysqli_error($conn);
+    }
+    else {
+        $res = mysqli_query($conn,"INSERT INTO user_accounts (u_id,at_id,account_id,account_name,account_token,token_expiry,account_secret)
 VALUES ($uid,1,'$fb_uid','$fb_uname','$fb_token','$fb_date' ,'')");
-echo mysqli_error($db);
-
-$_SESSION['success']="";
-
-if($res) 
-{
-	
-  	header('Location:oauthlinks.php');
-	
+        echo mysqli_error($conn);
+    }
+    include 'fbpost.php';
+    postToFB($fb_uid,$fb_token);
+    header('Location:oauthlinks.php');
+    //twitter
 }
-else
-{
-	echo "failed";
-	
+else {
+    $res = mysqli_query($conn,"INSERT INTO user_accounts (u_id,at_id,account_id,account_name,account_token,token_expiry,account_secret)
+VALUES ($uid,1,'$fb_uid','$fb_uname','$fb_token','$fb_date' ,'')");
+    echo mysqli_error($conn);
+    if($res) {
+        $_SESSION['success']="success";
+        header('Location:oauthlinks.php');
+    }
+    else
+        echo "failed";
 }
+
+
 
 
 

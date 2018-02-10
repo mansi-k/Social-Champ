@@ -3,14 +3,14 @@
 $perfectkw = array('non-government','non government','nongovernment','nonprofit','orphanage',
     'big international ngo','business organized ngo','community based','civil society','environmental ngo',
     'government organized ngo','grassroots','global social change',
-    'social work','social help');
+    'social work','social help','charity','charitable organization');
 
 $helperkw = array('NPO','NGO','BINGO','BONGO','CBO','CSO','ENGO','GONGO','MONGO','IPO','GRO','GSCO','NPO','organization',
     'society','needy','equality','help','awareness','under-privilege','education','poor','poverty','slum','support',
     'farmer','literacy','donation','donate','malnutrition','indigenous','adopt','care','campaign','community','counsel',
 	'crisis','depression','develop','disabled','disability','disorder','life','foster','fund','group','hospice','clinic',
 	'mental','military','problem','resolution','resolve','harm','share','sharing','treatment','abuse','movement','freedom','right',
-	'rural','women','uplift','encourage','medical camp','free','girl','health','child','charitable','charity');
+	'rural','women','uplift','encourage','medical camp','free','girl','health','child','charitable');
 
 /*
 $text = 'Freedom Again Foundation is a organization working towards the upliftment of society while advocating financial freedom. In our everyday life, we come across lots of sectors of the society where people are needy, deprived of or unable to meet their basic necessities. It makes us wonder what could be done to give back to the society and to remove financial inequality from our daily lives. Thus, Freedom Again Foundation was born out of a small idea or gesture of wanting to help the needy in every way possible. At Freedom Again Foundation, our primary goal is to identify the reasons for financial inequality from a grassroots level and work towards creating awareness and resolving it. Our secondary goal is to work towards helping the needy and under-privileged to the best of our abilities and with help from the society. Our Vision:

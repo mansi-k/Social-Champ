@@ -97,7 +97,6 @@ function scanTags($tag) {
             $pginfo = $fb->get('/' . $tag['id'] . '?fields=id,name,category,about,mission,description,general_info,personal_info,impressum,category_list,company_overview,bio');
             $pgnode = $pginfo->getGraphNode();
             if(isSWAccount($pgnode)) {
-
                 return true;
             }
         }
@@ -245,14 +244,16 @@ function scanAccounts($acc) {
     if($accscore>0 && $sw) {
         echo "<br>".$acc['name']."->".$acc['id']."->".$accscore;
         //createForFetch($acc['id'],$acc['name'],15,'page','yes');
-        $a = array('id'=>$acc['id'],'name'=>$acc['name'],'token'=>$acc['access_token'],'type'=>'page','sw'=>'yes','uid'=>$_SESSION['uid']);
-        fetchPeople($a,2);
+        if(!isThisNGOId($acc['id'])) {
+            $a = array('id' => $acc['id'], 'name' => $acc['name'], 'token' => $acc['access_token'], 'type' => 'page', 'sw' => 'yes', 'uid' => $_SESSION['uid']);
+            fetchPeople($a, 2);
+        }
     }
     return $accscore;
 }
 
 function scanGroups($grp) {
-    global $points;
+    global $points, $conn;
     $grpscore = 0;
     /*
     if(!$grpscore && (isset($grp['id']) && isThisNGOId($grp['id'])) && ((isset($grp['administrator']) && $grp['administrator']) || (isset($grp['owner']['id']) && isThisNGOId($grp['owner']['id']))) ) {
@@ -294,14 +295,23 @@ function scanGroups($grp) {
     if($grpscore>0) {
         echo "<br>".$grp['name']."->".$grp['id']."->".$grpscore;
         //createForFetch($grp['id'],$grp['name'],15,'group','yes');
-        $a = array('id'=>$grp['id'],'name'=>$grp['name'],'token'=>'','type'=>'group','sw'=>'yes','uid'=>$_SESSION['uid']);
-        fetchPeople($a,2);
+        $owtk = null;
+        if(isset($grp['owner']['id']) && isThisNGOId($grp['owner']['id'])) {
+            $soid = $grp['owner']['id'];
+            $ow = mysqli_query($conn,"SELECT so_token FROM this_ngo_accs_view WHERE so_id='$soid'");
+            $owa = mysqli_fetch_array($ow);
+            $owtk = $owa['so_token'];
+        }
+        if(!isThisNGOId($grp['id'])) {
+            $a = array('id' => $grp['id'], 'name' => $grp['name'], 'token' => $owtk, 'type' => 'group', 'sw' => 'yes', 'uid' => $_SESSION['uid']);
+            fetchPeople($a, 2);
+        }
     }
     return $grpscore;
 }
 
 function scanEvents($evn) {
-    global $points;
+    global $points, $conn;
     $eventscore = 0;
     $eadm = '';
     if(!$eventscore && (isset($evn['id']) && isThisNGOId($evn['id'])) || (isset($evn['description']) && searchThisNGO($evn['description'])) || (isset($evn['place']['id']) && isThisNGOId($evn['place']['id'])) || (isset($evn['owner']['id']) && isThisNGOId($evn['owner']['id'])) ) {
@@ -344,8 +354,17 @@ function scanEvents($evn) {
     if($eventscore>0) {
         echo "<br>".$evn['name']."->".$evn['id']."->".$eventscore;
         //createForFetch($evn['id'],$evn['name'],$eventscore,'event','yes');
-        $a = array('id'=>$evn['id'],'name'=>$evn['name'],'token'=>'','type'=>'event','sw'=>'yes','uid'=>$eadm);
-        fetchPeople($a,2);
+        $owtk = null;
+        if(isset($evn['owner']['id']) && isThisNGOId($evn['owner']['id'])) {
+            $soid = $evn['owner']['id'];
+            $ow = mysqli_query($conn,"SELECT so_token FROM this_ngo_accs_view WHERE so_id='$soid'");
+            $owa = mysqli_fetch_array($ow);
+            $owtk = $owa['so_token'];
+        }
+        if(!isThisNGOId($evn['id'])) {
+            $a = array('id' => $evn['id'], 'name' => $evn['name'], 'token' => $owtk, 'type' => 'event', 'sw' => 'yes', 'uid' => $eadm);
+            fetchPeople($a, 2);
+        }
     }
     return $eventscore;
 }

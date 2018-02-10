@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2018 at 03:34 PM
+-- Generation Time: Feb 10, 2018 at 05:51 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -113,8 +113,9 @@ INSERT INTO `follow_up_types` (`ft_id`, `followup_type`, `weightage`) VALUES
 CREATE TABLE `ngo_social_objects` (
   `ns_id` int(11) NOT NULL,
   `u_id` int(11) DEFAULT NULL,
-  `so_id` text NOT NULL,
+  `so_id` text,
   `so_name` varchar(100) NOT NULL,
+  `owner_nm` varchar(30) DEFAULT NULL,
   `so_token` text,
   `so_type_id` int(11) NOT NULL,
   `at_id` int(11) NOT NULL,
@@ -178,11 +179,6 @@ INSERT INTO `points` (`p_id`, `p_name`, `points`, `pa_type`) VALUES
 (36, 'o_interest', 18, 1),
 (37, 'n_member', 25, 1),
 (38, 'o_member', 23, 1),
-(39, 'n_listsub', 20, 2),
-(40, 'n_listmem', 20, 2),
-(41, 'o_ownlist', 15, 2),
-(42, 'o_ownlistmem', 5, 2),
-(43, 'o_sublist', 10, 2),
 (44, 'o_addedto', 10, 2),
 (45, 'v_family', 10, 1),
 (46, 'v_about', 10, 1),
@@ -198,13 +194,32 @@ INSERT INTO `points` (`p_id`, `p_name`, `points`, `pa_type`) VALUES
 (57, 'o_conv', 20, 1),
 (58, 'o_posttag', 15, 2),
 (59, 'nn_posttag', 16, 2),
-(60, 'n_sublist', 7, 2),
 (61, 'n_addedto', 12, 2),
-(62, 'o_listfrom', 5, 2),
-(63, 'n_listfrom', 10, 2),
 (64, 'n_posttag', 17, 2),
 (65, 'o_from', 17, 2),
-(66, 'o_listsub', 15, 2);
+(67, 'o_ownlist', 12, 2),
+(68, 'o_listmem', 5, 2),
+(69, 'o_listsub', 10, 2),
+(70, 'n_ownlist', 20, 2),
+(71, 'n_listmem', 12, 2),
+(72, 'n_listsub', 14, 2),
+(73, 'nn_ownlist', 15, 2),
+(74, 'nn_listmem', 10, 2),
+(75, 'nn_listsub', 12, 2),
+(76, 'o_listfrom', 10, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `scan_mx_id`
+--
+
+CREATE TABLE `scan_mx_id` (
+  `sr_id` int(50) NOT NULL,
+  `u_id` int(50) NOT NULL,
+  `response` bigint(100) NOT NULL,
+  `response_type` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -252,7 +267,9 @@ CREATE TABLE `social_object_types` (
 INSERT INTO `social_object_types` (`ot_id`, `ot_type`) VALUES
 (1, 'page'),
 (2, 'group'),
-(3, 'event');
+(3, 'event'),
+(4, 'post'),
+(5, 'list');
 
 -- --------------------------------------------------------
 
@@ -263,7 +280,9 @@ INSERT INTO `social_object_types` (`ot_id`, `ot_type`) VALUES
 CREATE TABLE `social_responses` (
   `sr_id` int(11) NOT NULL,
   `so_id` int(11) NOT NULL,
-  `response` text NOT NULL
+  `response` text NOT NULL,
+  `r_obj_id` text NOT NULL,
+  `at_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -314,7 +333,9 @@ INSERT INTO `user` (`u_id`, `name`, `phone_no`, `email_id`, `address`, `city`, `
 (8, 'Tapsee Sahani', 9930637638, '2015ruchita.yeole@ves.ac.in', 'Shaniwarvada', 'Pune', 411011),
 (9, 'Sangeeta Rajput', 8850438062, '2015reshma.khot@ves.ac.in', 'Hindmata,Dadar', 'Mumbai', 400456),
 (10, 'Priyanka Rathod', 9983456730, 'rathodpinky56@gmail.com', 'PMGP,Mankhurd', 'Navimumbai', 400703),
-(11, 'Default User', NULL, NULL, NULL, NULL, NULL);
+(11, 'Default User', NULL, NULL, NULL, NULL, NULL),
+(12, 'Sukesh Rathod', 8888888888, 'sukeshrathod3@gmail.com', 'basant colony, mulund', 'mumbai', 4000055),
+(13, 'Udgam NGO', 7303302447, 'rpinky1397@gmail.com', 'shivleela society, kamothe', 'mumbai', 444444);
 
 -- --------------------------------------------------------
 
@@ -359,7 +380,9 @@ INSERT INTO `user_accounts` (`a_id`, `u_id`, `at_id`, `account_id`, `account_nam
 (18, 8, 2, '927922770981265413', 'Tapsee_Sahani', '927922770981265413-eHAScYbZEhHPyucp4jskWi8IDW6Raal', '0000-00-00 00:00:00', 'w1jBf6ydpC3N4ixkHCG5UmbphFWgZ7su3VL4EXyyA95CQ', NULL),
 (19, 9, 2, '927936965311217664', 'Rsangeeta123', '927936965311217664-EnEPnBG6gcSBqpXQSrgnNVeQMt9pbHM', '0000-00-00 00:00:00', 'f872mmIXeQ8EyyerMWPb8Nkw46R3Msf4XEQQpJJrwKv9b', NULL),
 (20, 10, 2, '925405979642028032', 'Rpriyanka56', '925405979642028032-uHWBIPpcVN7m5qiCVTyjegzSblcsrXj', '0000-00-00 00:00:00', 'NfyV0b7mour7UfNwRftRa1lIVW78vzOdiIdHz3BV9lYM2\r\n', NULL),
-(21, 11, 1, '0', 'Default', 'EAAH09htiIfABABSCRiRLDX8PZBV66BqzgMXU6YCAiZB5peZAceqhZBnIZA4jufVlZBaVdGq4vtbIwlZCVvojUnGKv0BZC2hAdoF6H2DnCfpFeKJx1XXh5x0ZC5YPJJ8ElhVnyHxa9in5n4crni96RDOhZAlfusddSWrt8aeZC7ZCYnnaVgZDZD', NULL, NULL, NULL);
+(21, 11, 1, '0', 'Default', 'EAAH09htiIfABABSCRiRLDX8PZBV66BqzgMXU6YCAiZB5peZAceqhZBnIZA4jufVlZBaVdGq4vtbIwlZCVvojUnGKv0BZC2hAdoF6H2DnCfpFeKJx1XXh5x0ZC5YPJJ8ElhVnyHxa9in5n4crni96RDOhZAlfusddSWrt8aeZC7ZCYnnaVgZDZD', NULL, NULL, NULL),
+(22, 12, 1, '112364232916430', 'Sukesh Rathod', 'EAAH09htiIfABAACaSlWuS25CjRJnNXBRAgmzNPpPLd0hPHWITK980DCbwN9vOI9y9RS05TTJlbeTDYTiYZCrocPC7YYrHr4rFBZC2p5lQededsIPVPBcvVERolOThLijh2dVCQSLsx1dPTdZALqRNSQ1iYx8Ym9lixnZBZByqUQZDZD', '0000-00-00 00:00:00', '', NULL),
+(23, 13, 2, '942609048599379968', 'dogoodforNGO', '942609048599379968-x7fOIX3c0bkZ1KdIAUHOp2HGiCpvsUE', NULL, 'sRsKwuTKA4RA57IKkn9Ck3dL6Wapw6CAUxJo1rqOA2k0W', NULL);
 
 -- --------------------------------------------------------
 
@@ -379,7 +402,7 @@ CREATE TABLE `user_extended` (
 --
 
 INSERT INTO `user_extended` (`ue_id`, `u_id`, `ut_id`, `level`) VALUES
-(1, 1, 4, 1),
+(1, 1, 1, 1),
 (3, 2, 1, 2),
 (4, 2, 2, 2),
 (5, 3, 1, 3),
@@ -392,7 +415,43 @@ INSERT INTO `user_extended` (`ue_id`, `u_id`, `ut_id`, `level`) VALUES
 (12, 8, 2, 4),
 (13, 9, 2, 5),
 (14, 10, 2, 2),
-(15, 9, 1, 2);
+(15, 9, 1, 2),
+(16, 12, 4, NULL),
+(17, 13, 4, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_scan_response`
+--
+
+CREATE TABLE `user_scan_response` (
+  `id` int(11) NOT NULL,
+  `user_scan_id` int(30) NOT NULL,
+  `us_response` longtext NOT NULL,
+  `us_type` int(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_scan_response_type`
+--
+
+CREATE TABLE `user_scan_response_type` (
+  `res_id` int(11) NOT NULL,
+  `res_type` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_scan_response_type`
+--
+
+INSERT INTO `user_scan_response_type` (`res_id`, `res_type`) VALUES
+(1, 'tweet'),
+(2, 'retweeters'),
+(3, 'likes'),
+(4, 'list');
 
 -- --------------------------------------------------------
 
@@ -494,6 +553,14 @@ ALTER TABLE `points`
   ADD KEY `pa_type` (`pa_type`);
 
 --
+-- Indexes for table `scan_mx_id`
+--
+ALTER TABLE `scan_mx_id`
+  ADD PRIMARY KEY (`sr_id`),
+  ADD KEY `u_id` (`u_id`),
+  ADD KEY `response_type` (`response_type`);
+
+--
 -- Indexes for table `score_types`
 --
 ALTER TABLE `score_types`
@@ -510,7 +577,8 @@ ALTER TABLE `social_object_types`
 --
 ALTER TABLE `social_responses`
   ADD PRIMARY KEY (`sr_id`),
-  ADD KEY `so_id` (`so_id`);
+  ADD KEY `so_id` (`so_id`),
+  ADD KEY `at_id` (`at_id`);
 
 --
 -- Indexes for table `user`
@@ -533,6 +601,20 @@ ALTER TABLE `user_extended`
   ADD PRIMARY KEY (`ue_id`),
   ADD KEY `u_id` (`u_id`),
   ADD KEY `ut_id` (`ut_id`);
+
+--
+-- Indexes for table `user_scan_response`
+--
+ALTER TABLE `user_scan_response`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_scan_id` (`user_scan_id`),
+  ADD KEY `us_type` (`us_type`);
+
+--
+-- Indexes for table `user_scan_response_type`
+--
+ALTER TABLE `user_scan_response_type`
+  ADD PRIMARY KEY (`res_id`);
 
 --
 -- Indexes for table `user_scores`
@@ -586,7 +668,12 @@ ALTER TABLE `ngo_social_objects`
 -- AUTO_INCREMENT for table `points`
 --
 ALTER TABLE `points`
-  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+--
+-- AUTO_INCREMENT for table `scan_mx_id`
+--
+ALTER TABLE `scan_mx_id`
+  MODIFY `sr_id` int(50) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `score_types`
 --
@@ -596,27 +683,37 @@ ALTER TABLE `score_types`
 -- AUTO_INCREMENT for table `social_object_types`
 --
 ALTER TABLE `social_object_types`
-  MODIFY `ot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `social_responses`
 --
 ALTER TABLE `social_responses`
-  MODIFY `sr_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `user_accounts`
 --
 ALTER TABLE `user_accounts`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `user_extended`
 --
 ALTER TABLE `user_extended`
-  MODIFY `ue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT for table `user_scan_response`
+--
+ALTER TABLE `user_scan_response`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `user_scan_response_type`
+--
+ALTER TABLE `user_scan_response_type`
+  MODIFY `res_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `user_scores`
 --
@@ -665,6 +762,20 @@ ALTER TABLE `points`
   ADD CONSTRAINT `points_ibfk_1` FOREIGN KEY (`pa_type`) REFERENCES `account_types` (`at_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `scan_mx_id`
+--
+ALTER TABLE `scan_mx_id`
+  ADD CONSTRAINT `scan_mx_id_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `user_accounts` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `scan_mx_id_ibfk_2` FOREIGN KEY (`response_type`) REFERENCES `user_scan_response_type` (`res_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `social_responses`
+--
+ALTER TABLE `social_responses`
+  ADD CONSTRAINT `account_type` FOREIGN KEY (`at_id`) REFERENCES `account_types` (`at_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `object_type` FOREIGN KEY (`so_id`) REFERENCES `social_object_types` (`ot_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `user_accounts`
 --
 ALTER TABLE `user_accounts`
@@ -677,6 +788,13 @@ ALTER TABLE `user_accounts`
 ALTER TABLE `user_extended`
   ADD CONSTRAINT `user_extended_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `user` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `user_extended_ibfk_2` FOREIGN KEY (`ut_id`) REFERENCES `user_types` (`ut_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user_scan_response`
+--
+ALTER TABLE `user_scan_response`
+  ADD CONSTRAINT `user_scan_response_ibfk_1` FOREIGN KEY (`user_scan_id`) REFERENCES `user_accounts` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_scan_response_ibfk_2` FOREIGN KEY (`us_type`) REFERENCES `user_scan_response_type` (`res_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user_scores`

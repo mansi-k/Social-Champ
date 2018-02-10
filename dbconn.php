@@ -12,4 +12,5 @@ while($qparr = mysqli_fetch_array($qry)) {
     $points[$qparr['p_name']] = $qparr['points'];
 }
 
+
 ?>

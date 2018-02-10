@@ -1,7 +1,7 @@
 <?php
 //require 'fbtoken.php';
 require_once 'fbinit.php';
- 
+
 
 $helper = $fb->getRedirectLoginHelper();
 
@@ -13,7 +13,7 @@ $permissions = ['user_birthday','user_religion_politics','user_relationships','u
     'user_managed_groups','manage_pages','pages_manage_cta','pages_manage_instant_articles','pages_show_list','publish_pages',
     'read_page_mailboxes','ads_management','ads_read','business_management','pages_messaging',
     'public_profile']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('http://localhost:8081/sci3p/fbtoken.php', $permissions);
+$loginUrl = $helper->getLoginUrl('http://localhost:8081/sci3/fbtoken.php', $permissions);
 
 
 ?>

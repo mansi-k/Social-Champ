@@ -3,8 +3,8 @@ include('connection.php');
 
 global $conn;
 $i=1;
-$points="select * from points";
-$result=mysqli_query($conn,$points);
+$tpoints="select * from points";
+$result=mysqli_query($conn,$tpoints);
 while($test=mysqli_fetch_array($result))
 {
 	$points_db[]=$test;

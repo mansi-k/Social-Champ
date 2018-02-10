@@ -3,18 +3,18 @@ set_time_limit (0);
 include_once 'dbconn.php';
 include_once 'fbinit.php';
 include_once 'fbglobals.php';
-$adminsarr = array();
 include_once 'fbfunc.php';
 include_once 'fbngofunc.php';
 include_once 'nlp.php';
+include_once 'per_cal2.php';
 
 use Facebook\FacebookRequest;
 
 //$pgid = '1774494506184449';
 
 
-$since = date("Y-m-d",strtotime(date("y-m-d").' -2 months '));
-$until = date("Y-m-d",strtotime(date("y-m-d").' -2 days'));
+$_SESSION['since'] = date("Y-m-d",strtotime(date("y-m-d").' -10 days'));
+$_SESSION['until'] = date("Y-m-d",strtotime(date("y-m-d").' -1 day'));
 
 $q1 = mysqli_query($conn,"SELECT n.*, a.account_id, a.account_name, a.account_token FROM ngo_social_objects AS n, user_accounts AS a, user_extended AS e WHERE n.u_id=e.u_id=a.u_id AND a.at_id=1 AND e.ut_id=4");
 while($row=mysqli_fetch_array($q1)) {
@@ -37,6 +37,8 @@ while($row=mysqli_fetch_array($q1)) {
         eventScan($_SESSION['fb_uid'],$fb,1);
     //echo "<br><b>Profile Score ".$_SESSION['fbscore']."</b>";
 }
+
+per_cal();
 
 /*
 $q2 = mysqli_query($conn,"SELECT DISTINCT n.* , a.account_id, a.account_name, a.account_token FROM ngo_social_objects AS n, user_extended AS ue, user_accounts AS a WHERE n.u_id=ue.u_id AND n.u_id=a.u_id AND ue.ut_id!=4 AND n.is_sw='yes' AND a.at_id=1");

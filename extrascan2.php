@@ -11,24 +11,16 @@ include_once 'per_cal2.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
 require('config.php');
 require 'autoload.php';
-include("twitter_extra_scan_func.php");
+include("extra_scan_func.php");
 //include('connection.php');
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET,'926448476212174849-V55q3spHf7EEJCeL14tjc2AO5yavdEt','3bJkAyye4VPbvdk9rucsRtevVqbNDWpYGFGbT9bdVPQbU');	
+$bid=954257679202988033;
+$ownernm=" Pinky Rathod";
+$ownersn="rathodpinky371";
+$listslug="charitable-orientation";
 
 
 //$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET,'926448476212174849-V55q3spHf7EEJCeL14tjc2AO5yavdEt','3bJkAyye4VPbvdk9rucsRtevVqbNDWpYGFGbT9bdVPQbU');
-
-fbDefaultTokens();
-
-$goid=null;
-$gat=null;
-$got=null;
-
-if(isset($_GET['oid']) && isset($_GET['at']) && isset($_GET['ot'])) {
-    $goid = $_GET['oid'];
-    $gat = $_GET['at'];
-    $got = $_GET['ot'];
-}
 
 if(isset($_POST['esbtn'])) {
     global $conn;
@@ -36,6 +28,11 @@ if(isset($_POST['esbtn'])) {
     $platform = $_POST['optradio'];
     $type = $_POST['objtype'];
     if ($platform == 'facebook') {
+        $qry = mysqli_query($conn, "SELECT a.account_id, a.account_name, a.account_token FROM user_accounts AS a, user_extended AS e WHERE e.u_id=a.u_id AND a.at_id=1 AND e.ut_id=4");
+        $qar = mysqli_fetch_array($qry);
+        $_SESSION['fb_access_token'] = $qar['account_token'];
+        $_SESSION['fb_uid'] = "";
+        $fb->setDefaultAccessToken($_SESSION['fb_access_token']);
         $_SESSION['since'] = date("Y-m-d", strtotime(date("y-m-d") . ' -10 days '));
         $_SESSION['until'] = date("Y-m-d", strtotime(date("y-m-d") . ' -0 day'));
         //echo $since." - ".$until;
@@ -46,7 +43,7 @@ if(isset($_POST['esbtn'])) {
         $soid = $_SESSION['fb_uid'] = $obj['id'];
         echo "fb_uid=".$_SESSION['fb_uid'];
         if ($type == 'page') {
-            $pq = mysqli_query($conn,"SELECT * FROM ngo_social_objects WHERE so_id='$soid' and so_token!=null and so_token!=''");
+            $pq = mysqli_query($conn,"SELECT * FROM ngo_social_objects WHERE so_id='$soid'");
             if(mysqli_num_rows($pq)>0) {
                 $prow = mysqli_fetch_array($pq);
                 $fb->setDefaultAccessToken($prow['so_token']);
@@ -64,24 +61,21 @@ if(isset($_POST['esbtn'])) {
         }
         else if ($type == 'post') {
             $postid = $obj['id']."_".$_POST['exid'];
-            $feedget = $fb->get($postid . '?fields=created_time,description,message,from,name,caption,message_tags,source,status_type,story,story_tags,to{id,name,profile_type},type,parent_id,place,privacy,shares,sharedposts{from},reactions.summary(true){id,name,type,profile_type},comments.summary(true){from,message,message_tags,comments}');
+            $feedget = $fb->get($postid . '?fields=created_time,description,message,from,name,caption,message_tags,source,status_type,story,story_tags,to{id,name,profile_type},type,parent_id,place,privacy,shares,sharedposts{from},reactions.summary(true){id,name,type,profile_type},comments.summary(true){from,message,message_tags,comments}&until=' . $until . '&since=' . $since);
             $feed['feed'] = $feedget->getGraphNode();
             prepareFeeds($feed,0);
         }
     }
     else if ($platform == 'twitter') {
         if ($type == 'list') {
-			$ownersn=$oid;
-			$listslug=$_POST['exid'];
-            scanList($connection, $ownersn, $listslug);
-        } else if ($type == 'tweet') {
-            scanPost($connection, $oid);
+            scanList($connection, $ownersn, $ownernm, $listslug);
+        } else if ($type == 'post') {
+            scanPost($connection, $id);
         }
     }
-   
+    per_cal();
 }
 
-per_cal();
 ?>
 
 
@@ -140,8 +134,7 @@ document.getElementById('div1').innerHTML='<div class="form-group"><label class=
                 <label for="URL/ID" class="col-md-2 control-label">URL/ID</label>
                 <div class="col-md-6  inputGroupContainer">
                     <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input  placeholder="Enter URL/ID" class="form-control"  type="text" id="URL/ID" name="objid"
-                        <?php if($goid) echo "value='".$goid."'"?>>
+                        <input  placeholder="Enter URL/ID" class="form-control"  type="text" id="URL/ID" name="objid">
                     </div>
                 </div>
             </div>
@@ -151,11 +144,11 @@ document.getElementById('div1').innerHTML='<div class="form-group"><label class=
                 <div class="col-sm-5">
                     <div class="radio">
                         <label>
-                            <input type="radio"  name="optradio" id="Radios1" value="facebook" onclick="showfield(this)" <?php if($gat=='facebook') echo "checked";?>>Facebook</label>
+                            <input type="radio"  name="optradio" id="Radios1" value="facebook" onclick=""showfield(this)">Facebook</label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="optradio" id="Radios2" value="twitter" <?php if($gat=='twitter') echo "checked";?>>
+                            <input type="radio" name="optradio" id="Radios2" value="twitter">
                             Twitter
                         </label>
                     </div>
@@ -168,11 +161,11 @@ document.getElementById('div1').innerHTML='<div class="form-group"><label class=
                     <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                         <select class="form-control" name="objtype" id="myselect" onchange="showfield(this.options[this.selectedIndex].value)">
                             <option value="">Please select your type</option>
-                            <option value="page" <?php if($got=='page') echo "selected";?>>Page</option>
-                            <option value="event" <?php if($got=='event') echo "selected";?>>Event</option>
-                            <option value="group" <?php if($got=='group') echo "selected";?>>Group</option>
-                            <option value="list" <?php if($got=='list') echo "selected";?>>List</option>
-                            <option value="post" <?php if($got=='post') echo "selected";?>>Post</option>
+                            <option value="page">Page</option>
+                            <option value="event">Event</option>
+                            <option value="group">Group</option>
+                            <option value="list">List</option>
+                            <option value="post">Post</option>
 							<option value="tweet">Tweet</option>
                         </select>
                     </div>

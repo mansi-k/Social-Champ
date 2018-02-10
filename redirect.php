@@ -13,7 +13,7 @@ if (!isset($_SESSION['access_token']))
 	$_SESSION['oauth_token'] =$token= $request_token['oauth_token'];
 	$_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
 	
-	if(!connection)
+	if(!$connection)
 	{
 		echo "oops something went wrong!!";
 	}
