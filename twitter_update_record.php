@@ -152,7 +152,7 @@ function json_retweeters($uid,$rt_id,$r_prspctv_nm,$r_prspctv_sn,$r_prspctv_id,$
 			{
 				if(!in_array($r_prspctv_id,$response->retweeters))
 				{
-				//echo "  tweet id found in db:".$rt_id."<br>";
+				//echo "$r_prspctv_id"."<br>";
 				array_push($response->retweeters,$r_prspctv_id);
 				//print_r($res);
 				$udt=json_encode($res);	
@@ -168,11 +168,12 @@ function json_retweeters($uid,$rt_id,$r_prspctv_nm,$r_prspctv_sn,$r_prspctv_id,$
 								$res=mysqli_fetch_array($result);
 								$pid=$res['u_id'];	
 							//scan_regular_retweeters($pid,$rid,$prspctv_id);
-								
+								echo "$r_prspctv_nm"."<br>";
 							update_existing($pid,$r_prspctv_scr);
 							}
 							else
 							{
+								echo "$r_prspctv_nm"."<br>";
 								new_user($r_prspctv_nm,$r_prspctv_sn,$r_prspctv_id,$r_prspctv_scr)	;
 							}
 				}
