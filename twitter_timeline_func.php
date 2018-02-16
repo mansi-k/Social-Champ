@@ -46,6 +46,7 @@ function scanTweets($tweet)
 	global $connection,$account_id,$screen_name,$conn;
 	$m_id=0;$lastid=0;
 	$max=-1;
+	echo "<b>Screen Name: ".$screen_name."</b><br>";
 	try
 	{
 		$totaltweet[]=$tweet;

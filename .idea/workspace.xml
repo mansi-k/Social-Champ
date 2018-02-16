@@ -21,8 +21,8 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1518271040207" expanded="true" signature="1706:1794" ph="SELECT * FRO... ngo_social_objects" />
-                <marker date="1518271040207" expanded="true" signature="6000:6041" ph="..." />
+                <marker date="1518811932545" expanded="true" signature="1706:1794" ph="SELECT * FRO... ngo_social_objects" />
+                <marker date="1518811932545" expanded="true" signature="6000:6041" ph="..." />
               </folding>
             </state>
           </provider>
@@ -34,7 +34,7 @@
             <state relative-caret-position="578">
               <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
               <folding>
-                <marker date="1518271308844" expanded="true" signature="507:683" ph="SELECT u1.na... user" />
+                <marker date="1518811207100" expanded="true" signature="507:683" ph="SELECT u1.na... user" />
               </folding>
             </state>
           </provider>
@@ -54,32 +54,38 @@
         <entry file="file://$PROJECT_DIR$/fbscan.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3485">
-              <caret line="205" column="17" lean-forward="false" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
+              <caret line="207" column="17" lean-forward="false" selection-start-line="207" selection-start-column="17" selection-end-line="207" selection-end-column="17" />
               <folding>
-                <marker date="1518271832561" expanded="true" signature="11376:11462" ph="UPDATE user_... " />
-                <marker date="1518271832561" expanded="true" signature="12322:12403" ph="UPDATE user_... " />
+                <marker date="1518811207127" expanded="true" signature="11439:11525" ph="UPDATE user_... " />
+                <marker date="1518811207127" expanded="true" signature="12385:12466" ph="UPDATE user_... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fbusers.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fbusers.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fbusers.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="394">
               <caret line="72" column="14" lean-forward="false" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
               <folding>
-                <marker date="1518273547529" expanded="true" signature="243:419" ph="SELECT u1.na... user" />
-                <marker date="1518273547529" expanded="true" signature="1297:1399" ph="select us_id... user_scores" />
-                <marker date="1518273547529" expanded="true" signature="1351:1394" ph="select ue_id... user_extended" />
-                <marker date="1518273547529" expanded="true" signature="1351:1395" ph="select ue_id... user_extended" />
-                <marker date="1518273547529" expanded="true" signature="2159:2361" ph="SELECT DISTI... user" />
-                <marker date="1518273547529" expanded="true" signature="3058:3100" ph="SELECT u_id user_extended" />
-                <marker date="1518273547529" expanded="true" signature="3058:3116" ph="SELECT u_id user_extended" />
-                <marker date="1518273547529" expanded="true" signature="3476:3590" ph="select us_id... user_scores" />
-                <marker date="1518273547529" expanded="true" signature="3542:3585" ph="select ue_id... user_extended" />
-                <marker date="1518273547529" expanded="true" signature="3542:3586" ph="select ue_id... user_extended" />
+                <marker date="1518811207137" expanded="true" signature="243:419" ph="SELECT u1.na... user" />
+                <marker date="1518811207137" expanded="true" signature="1297:1399" ph="select us_id... user_scores" />
+                <marker date="1518811207137" expanded="true" signature="1351:1394" ph="select ue_id... user_extended" />
+                <marker date="1518811207137" expanded="true" signature="1351:1395" ph="select ue_id... user_extended" />
+                <marker date="1518811207137" expanded="true" signature="2152:2333" ph="..." />
+                <marker date="1518811207137" expanded="true" signature="2159:2333" ph="SELECT DISTI... user" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fbngofunc.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fbngofunc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="275" column="92" lean-forward="false" selection-start-line="275" selection-start-column="92" selection-end-line="275" selection-end-column="92" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,21 +93,21 @@
       <file leaf-file-name="activity.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
+            <state relative-caret-position="4420">
               <caret line="260" column="54" lean-forward="false" selection-start-line="260" selection-start-column="54" selection-end-line="260" selection-end-column="54" />
               <folding>
-                <marker date="1518272590060" expanded="true" signature="2224:2454" ph="SELECT * FRO... ngo_social_objects" />
-                <marker date="1518272590060" expanded="true" signature="2848:2899" ph="SELECT name user" />
-                <marker date="1518272590060" expanded="true" signature="3009:3075" ph="SELECT accou... user_accounts" />
-                <marker date="1518272590060" expanded="true" signature="3930:4147" ph="SELECT * FRO... ngo_social_objects" />
-                <marker date="1518272590060" expanded="true" signature="4541:4592" ph="SELECT name user" />
-                <marker date="1518272590060" expanded="true" signature="4702:4768" ph="SELECT accou... user_accounts" />
-                <marker date="1518272590060" expanded="true" signature="5625:5842" ph="SELECT * FRO... ngo_social_objects" />
-                <marker date="1518272590060" expanded="true" signature="6236:6287" ph="SELECT name user" />
-                <marker date="1518272590060" expanded="true" signature="6397:6463" ph="SELECT accou... user_accounts" />
-                <marker date="1518272590060" expanded="true" signature="7671:7815" ph="SELECT a.*, ngo_social_objects" />
-                <marker date="1518272590060" expanded="true" signature="8762:8906" ph="SELECT a.*, ngo_social_objects" />
-                <marker date="1518272590060" expanded="true" signature="9855:9999" ph="SELECT a.*, ngo_social_objects" />
+                <marker date="1518811205890" expanded="true" signature="2224:2454" ph="SELECT * FRO... ngo_social_objects" />
+                <marker date="1518811205890" expanded="true" signature="2848:2899" ph="SELECT name user" />
+                <marker date="1518811205890" expanded="true" signature="3009:3075" ph="SELECT accou... user_accounts" />
+                <marker date="1518811205890" expanded="true" signature="3930:4147" ph="SELECT * FRO... ngo_social_objects" />
+                <marker date="1518811205890" expanded="true" signature="4541:4592" ph="SELECT name user" />
+                <marker date="1518811205890" expanded="true" signature="4702:4768" ph="SELECT accou... user_accounts" />
+                <marker date="1518811205890" expanded="true" signature="5625:5842" ph="SELECT * FRO... ngo_social_objects" />
+                <marker date="1518811205890" expanded="true" signature="6236:6287" ph="SELECT name user" />
+                <marker date="1518811205890" expanded="true" signature="6397:6463" ph="SELECT accou... user_accounts" />
+                <marker date="1518811205890" expanded="true" signature="7671:7815" ph="SELECT a.*, ngo_social_objects" />
+                <marker date="1518811205890" expanded="true" signature="8762:8906" ph="SELECT a.*, ngo_social_objects" />
+                <marker date="1518811205890" expanded="true" signature="9855:9999" ph="SELECT a.*, ngo_social_objects" />
               </folding>
             </state>
           </provider>
@@ -226,9 +232,9 @@
         <option value="$PROJECT_DIR$/extrascan.php" />
         <option value="$PROJECT_DIR$/fbinit.php" />
         <option value="$PROJECT_DIR$/oauthlinks.php" />
-        <option value="$PROJECT_DIR$/fbusers.php" />
         <option value="$PROJECT_DIR$/fbscan.php" />
         <option value="$PROJECT_DIR$/activity.php" />
+        <option value="$PROJECT_DIR$/fbusers.php" />
       </list>
     </option>
   </component>
@@ -425,17 +431,18 @@
       <workItem from="1518224721344" duration="3409000" />
       <workItem from="1518240198579" duration="13501000" />
       <workItem from="1518273620261" duration="9000" />
+      <workItem from="1518813452695" duration="38000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="753563000" />
+    <option name="totallyTimeSpent" value="753601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28971255" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29425114" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -563,10 +570,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-          <folding>
-            <marker date="1517946528558" expanded="true" signature="221:262" ph="SELECT us_id... user_scores" />
-            <marker date="1517946528558" expanded="true" signature="221:263" ph="SELECT us_id... user_scores" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -590,12 +594,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1734">
           <caret line="102" column="38" lean-forward="false" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
-          <folding>
-            <marker date="1518184008816" expanded="true" signature="2900:2955" ph="SELECT * FRO... user_accounts" />
-            <marker date="1518184008816" expanded="true" signature="3093:3155" ph="UPDATE user_... " />
-            <marker date="1518184008816" expanded="true" signature="3249:3418" ph="INSERT INTO user_accounts... " />
-            <marker date="1518184008816" expanded="true" signature="3614:3783" ph="INSERT INTO user_accounts... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -611,16 +610,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding>
-            <marker date="1518183019656" expanded="true" signature="640:678" ph="SELECT so_na... this_ngo_accs_view" />
-            <marker date="1518183019656" expanded="true" signature="925:979" ph="SELECT ns_id... this_ngo_accs_view" />
-            <marker date="1518183019656" expanded="true" signature="12942:13001" ph="SELECT so_to... this_ngo_accs_view" />
-            <marker date="1518183019656" expanded="true" signature="15598:15650" ph="SELECT so_to... this_ngo_accs_view" />
-            <marker date="1518183019656" expanded="true" signature="15598:15651" ph="SELECT so_to... this_ngo_accs_view" />
-            <marker date="1518183019656" expanded="true" signature="15598:15652" ph="SELECT so_to... this_ngo_accs_view" />
-            <marker date="1518183019656" expanded="true" signature="15598:15656" ph="SELECT so_to... this_ngo_accs_view" />
-            <marker date="1518183019656" expanded="true" signature="15598:15657" ph="SELECT so_to... this_ngo_accs_view" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -644,7 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="12" column="99" lean-forward="false" selection-start-line="12" selection-start-column="99" selection-end-line="12" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -652,10 +641,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
           <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
-          <folding>
-            <marker date="1517946481878" expanded="true" signature="1031:1175" ph="SELECT a.acc... user_accounts" />
-            <marker date="1517946481878" expanded="true" signature="1997:2049" ph="SELECT * FRO... ngo_social_objects" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -670,43 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="87" column="24" lean-forward="false" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fbngofunc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="275" column="92" lean-forward="false" selection-start-line="275" selection-start-column="92" selection-end-line="275" selection-end-column="92" />
-          <folding>
-            <marker date="1518173440908" expanded="true" signature="1153:1233" ph="SELECT * FRO... social_responses" />
-            <marker date="1518173440908" expanded="true" signature="6303:6361" ph="UPDATE socia... " />
-            <marker date="1518173440908" expanded="true" signature="6415:6509" ph="INSERT INTO social_responses... " />
-            <marker date="1518173440908" expanded="true" signature="7567:7647" ph="SELECT * FRO... social_responses" />
-            <marker date="1518173440908" expanded="true" signature="11202:11260" ph="UPDATE socia... " />
-            <marker date="1518173440908" expanded="true" signature="11314:11408" ph="INSERT INTO social_responses... " />
-            <marker date="1518173440908" expanded="true" signature="14709:14786" ph="SELECT * FRO... social_responses" />
-            <marker date="1518173440908" expanded="true" signature="19848:19906" ph="UPDATE socia... " />
-            <marker date="1518173440908" expanded="true" signature="19960:20051" ph="INSERT INTO social_responses... " />
-            <marker date="1518173440908" expanded="true" signature="20450:20527" ph="SELECT * FRO... social_responses" />
-            <marker date="1518173440908" expanded="true" signature="20894:20952" ph="UPDATE socia... " />
-            <marker date="1518173440908" expanded="true" signature="21072:21162" ph="INSERT INTO social_responses... " />
-            <marker date="1518173440908" expanded="true" signature="32041:32081" ph="INSERT INTO user... " />
-            <marker date="1518173440908" expanded="true" signature="32197:32289" ph="INSERT INTO user_accounts... " />
-            <marker date="1518173440908" expanded="true" signature="32365:32427" ph="INSERT INTO user_extended... " />
-            <marker date="1518173440908" expanded="true" signature="32562:32627" ph="INSERT INTO user_scores... " />
-            <marker date="1518173440908" expanded="true" signature="33189:33248" ph="SELECT ue_id... user_extended" />
-            <marker date="1518173440908" expanded="true" signature="33435:33495" ph="SELECT ue_id... user_extended" />
-            <marker date="1518173440908" expanded="true" signature="33558:33601" ph="SELECT ue_id... user_extended" />
-            <marker date="1518173440908" expanded="true" signature="33741:33800" ph="SELECT us_id... user_scores" />
-            <marker date="1518173440908" expanded="true" signature="33928:33997" ph="UPDATE user_... " />
-            <marker date="1518173440908" expanded="true" signature="34063:34128" ph="INSERT INTO user_scores... " />
-            <marker date="1518173440908" expanded="true" signature="35349:35408" ph="SELECT ot_id... social_object_types" />
-            <marker date="1518173440908" expanded="true" signature="35535:35719" ph="INSERT INTO ngo_social_objects... " />
-            <marker date="1518173440908" expanded="true" signature="36004:36080" ph="UPDATE ngo_s... " />
-            <marker date="1518173440908" expanded="true" signature="36170:36235" ph="UPDATE ngo_s... " />
-            <marker date="1518173440908" expanded="true" signature="37401:37466" ph="SELECT u_id user_accounts" />
-            <marker date="1518173440908" expanded="true" signature="37609:37675" ph="SELECT ns_id... ngo_social_objects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -794,7 +743,7 @@
         <state relative-caret-position="578">
           <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
           <folding>
-            <marker date="1518271308844" expanded="true" signature="507:683" ph="SELECT u1.na... user" />
+            <marker date="1518811207100" expanded="true" signature="507:683" ph="SELECT u1.na... user" />
           </folding>
         </state>
       </provider>
@@ -810,10 +759,10 @@
     <entry file="file://$PROJECT_DIR$/fbscan.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3485">
-          <caret line="205" column="17" lean-forward="false" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
+          <caret line="207" column="17" lean-forward="false" selection-start-line="207" selection-start-column="17" selection-end-line="207" selection-end-column="17" />
           <folding>
-            <marker date="1518271832561" expanded="true" signature="11376:11462" ph="UPDATE user_... " />
-            <marker date="1518271832561" expanded="true" signature="12322:12403" ph="UPDATE user_... " />
+            <marker date="1518811207127" expanded="true" signature="11439:11525" ph="UPDATE user_... " />
+            <marker date="1518811207127" expanded="true" signature="12385:12466" ph="UPDATE user_... " />
           </folding>
         </state>
       </provider>
@@ -823,29 +772,29 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1518271040207" expanded="true" signature="1706:1794" ph="SELECT * FRO... ngo_social_objects" />
-            <marker date="1518271040207" expanded="true" signature="6000:6041" ph="..." />
+            <marker date="1518811932545" expanded="true" signature="1706:1794" ph="SELECT * FRO... ngo_social_objects" />
+            <marker date="1518811932545" expanded="true" signature="6000:6041" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
+        <state relative-caret-position="4420">
           <caret line="260" column="54" lean-forward="false" selection-start-line="260" selection-start-column="54" selection-end-line="260" selection-end-column="54" />
           <folding>
-            <marker date="1518272590060" expanded="true" signature="2224:2454" ph="SELECT * FRO... ngo_social_objects" />
-            <marker date="1518272590060" expanded="true" signature="2848:2899" ph="SELECT name user" />
-            <marker date="1518272590060" expanded="true" signature="3009:3075" ph="SELECT accou... user_accounts" />
-            <marker date="1518272590060" expanded="true" signature="3930:4147" ph="SELECT * FRO... ngo_social_objects" />
-            <marker date="1518272590060" expanded="true" signature="4541:4592" ph="SELECT name user" />
-            <marker date="1518272590060" expanded="true" signature="4702:4768" ph="SELECT accou... user_accounts" />
-            <marker date="1518272590060" expanded="true" signature="5625:5842" ph="SELECT * FRO... ngo_social_objects" />
-            <marker date="1518272590060" expanded="true" signature="6236:6287" ph="SELECT name user" />
-            <marker date="1518272590060" expanded="true" signature="6397:6463" ph="SELECT accou... user_accounts" />
-            <marker date="1518272590060" expanded="true" signature="7671:7815" ph="SELECT a.*, ngo_social_objects" />
-            <marker date="1518272590060" expanded="true" signature="8762:8906" ph="SELECT a.*, ngo_social_objects" />
-            <marker date="1518272590060" expanded="true" signature="9855:9999" ph="SELECT a.*, ngo_social_objects" />
+            <marker date="1518811205890" expanded="true" signature="2224:2454" ph="SELECT * FRO... ngo_social_objects" />
+            <marker date="1518811205890" expanded="true" signature="2848:2899" ph="SELECT name user" />
+            <marker date="1518811205890" expanded="true" signature="3009:3075" ph="SELECT accou... user_accounts" />
+            <marker date="1518811205890" expanded="true" signature="3930:4147" ph="SELECT * FRO... ngo_social_objects" />
+            <marker date="1518811205890" expanded="true" signature="4541:4592" ph="SELECT name user" />
+            <marker date="1518811205890" expanded="true" signature="4702:4768" ph="SELECT accou... user_accounts" />
+            <marker date="1518811205890" expanded="true" signature="5625:5842" ph="SELECT * FRO... ngo_social_objects" />
+            <marker date="1518811205890" expanded="true" signature="6236:6287" ph="SELECT name user" />
+            <marker date="1518811205890" expanded="true" signature="6397:6463" ph="SELECT accou... user_accounts" />
+            <marker date="1518811205890" expanded="true" signature="7671:7815" ph="SELECT a.*, ngo_social_objects" />
+            <marker date="1518811205890" expanded="true" signature="8762:8906" ph="SELECT a.*, ngo_social_objects" />
+            <marker date="1518811205890" expanded="true" signature="9855:9999" ph="SELECT a.*, ngo_social_objects" />
           </folding>
         </state>
       </provider>
@@ -855,17 +804,21 @@
         <state relative-caret-position="394">
           <caret line="72" column="14" lean-forward="false" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
           <folding>
-            <marker date="1518273547529" expanded="true" signature="243:419" ph="SELECT u1.na... user" />
-            <marker date="1518273547529" expanded="true" signature="1297:1399" ph="select us_id... user_scores" />
-            <marker date="1518273547529" expanded="true" signature="1351:1394" ph="select ue_id... user_extended" />
-            <marker date="1518273547529" expanded="true" signature="1351:1395" ph="select ue_id... user_extended" />
-            <marker date="1518273547529" expanded="true" signature="2159:2361" ph="SELECT DISTI... user" />
-            <marker date="1518273547529" expanded="true" signature="3058:3100" ph="SELECT u_id user_extended" />
-            <marker date="1518273547529" expanded="true" signature="3058:3116" ph="SELECT u_id user_extended" />
-            <marker date="1518273547529" expanded="true" signature="3476:3590" ph="select us_id... user_scores" />
-            <marker date="1518273547529" expanded="true" signature="3542:3585" ph="select ue_id... user_extended" />
-            <marker date="1518273547529" expanded="true" signature="3542:3586" ph="select ue_id... user_extended" />
+            <marker date="1518811207137" expanded="true" signature="243:419" ph="SELECT u1.na... user" />
+            <marker date="1518811207137" expanded="true" signature="1297:1399" ph="select us_id... user_scores" />
+            <marker date="1518811207137" expanded="true" signature="1351:1394" ph="select ue_id... user_extended" />
+            <marker date="1518811207137" expanded="true" signature="1351:1395" ph="select ue_id... user_extended" />
+            <marker date="1518811207137" expanded="true" signature="2152:2333" ph="..." />
+            <marker date="1518811207137" expanded="true" signature="2159:2333" ph="SELECT DISTI... user" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fbngofunc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="275" column="92" lean-forward="false" selection-start-line="275" selection-start-column="92" selection-end-line="275" selection-end-column="92" />
+          <folding />
         </state>
       </provider>
     </entry>

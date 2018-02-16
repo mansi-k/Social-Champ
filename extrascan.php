@@ -37,7 +37,7 @@ if(isset($_POST['esbtn'])) {
     $type = $_POST['objtype'];
     if ($platform == 'facebook') {
         $_SESSION['since'] = date("Y-m-d", strtotime(date("y-m-d") . ' -10 days '));
-        $_SESSION['until'] = date("Y-m-d", strtotime(date("y-m-d") . ' -0 day'));
+        $_SESSION['until'] = date("Y-m-d", strtotime(date("y-m-d") . ' +1 day'));
         //echo $since." - ".$until;
         $objget = $fb->get($oid . '?fields=id,name');
         $obj = $objget->getGraphNode();
@@ -56,7 +56,16 @@ if(isset($_POST['esbtn'])) {
             else
                 pageScan($obj['id'], $fb, 0);
         }
-        else if ($type == 'event') {
+		else if ($type == 'event' || $type == 'group'){
+			$pq1 = mysqli_query($conn,"SELECT account_token from user_accounts where u_id in (select u_id from ngo_social_objects where so_id='$soid')");
+			if(mysqli_num_rows($pq1)>0) {
+                $prow = mysqli_fetch_array($pq1);
+                $fb->setDefaultAccessToken($prow['account_token']);
+                //pageScan($obj['id'], $fb, 0, 1);
+                fbDefaultTokens();
+            }
+		}
+        if ($type == 'event') {
             eventScan($obj['id'], $fb, 0);
         }
         else if ($type == 'group') {
@@ -82,6 +91,7 @@ if(isset($_POST['esbtn'])) {
 }
 
 per_cal();
+fbDefaultTokens();
 ?>
 
 

@@ -8,12 +8,11 @@ include("twitter_scan.php");
 include("twitter_regulr_scan_func.php");
 include("twitter_func_defbyme.php");
 include('connection.php');
+include('per_cal2.php');
 
 
-$screen_name="SparshNGO";
-ps($screen_name);
-function ps($sn)
-{
+$sn="LIFETrustNGO";
+
 	$account_id=0;$screen_name;$user_name;
 	global $conn;
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET,'926448476212174849-V55q3spHf7EEJCeL14tjc2AO5yavdEt','3bJkAyye4VPbvdk9rucsRtevVqbNDWpYGFGbT9bdVPQbU');	
@@ -32,6 +31,7 @@ function ps($sn)
 	
 	}
 	}
+
 	$ck="select * from user_accounts where account_id='$aid' and at_id=2";
 		$c=mysqli_query($conn,$ck);
 		if(mysqli_num_rows($c)>0)
@@ -57,7 +57,7 @@ function ps($sn)
 			}	
 	
 }
-}
-	//print_r($profilescr);
 
+	//print_r($profilescr);
+per_cal();
 ?>
