@@ -3,12 +3,11 @@ include( "connection.php");
 function update_response($uid)
 {
 	global $ids,$conn;
-	$defar = array (array(
-		"tweet_id"  =>'',
-		"retweeters"=>array()));
+	//global $conn;
 	$tweet=array();
 	$rts=array();
-	$txt=" select * from user_scan_response where user_scan_id=$uid";
+	$twt;
+	$txt=" select * from user_scan_response where user_scan_id=$uid and us_type=1";
 	$t=mysqli_query($conn,$txt);
 	if(mysqli_num_rows($t)>0)
 	{
@@ -34,7 +33,7 @@ function update_response($uid)
 			//echo "<br>";
 			if(!empty($tweetid))
 			{
-				foreach ($ids as $i=>$idz)
+				foreach ($ids as $idz)
 				{
 					if(empty ($idz['tweetid']))
 					{
@@ -45,7 +44,8 @@ function update_response($uid)
 						$tweet[]=['tweet_id'=>$idz['tweetid'],'retweeters'=>[],'scanned_time'=>$idz['created_at']];
 						$twt=json_encode($tweet);
 						//print_r($twt);
-						$ud="update user_scan_response set us_response='$twt' where user_scan_id=$uid";
+						
+						$ud="update user_scan_response set us_response='$twt' where user_scan_id=$uid and us_type=1";
 						$rt=mysqli_query($conn,$ud);
 						if($rt)
 						{
@@ -66,41 +66,52 @@ function update_response($uid)
 		else{
 			foreach($ids as $ti)
 			{
+				if(empty($ti))
+			{continue;}
+				else{
 			$tweet[]=['tweet_id'=>$ti['tweetid'],'retweeters'=>[],'scanned_time'=>$ti['created_at']];
-			$twt=json_encode($tweet);
+			$twt=json_encode($tweet);}
 			}
 		//print_r($twt);
-		$ud="update user_scan_response set  us_response='$twt' where user_scan_id=$uid";
-		$rt=mysqli_query($conn,$ud);
-		if($rt)
+			if(!empty($twt))
 		{
-			//echo " su";
+		$ud="update user_scan_response set  us_response='$twt' where user_scan_id=$uid and us_type=1";
+		$rt=mysqli_query($conn,$ud);
+		if(!$rt)
+		{
+			echo " problem while updating usr<br>";
 		}
-		else{
-			echo "problem 1 <br>";
-		}
+			}
+		
 		}
 	}	
 	else
 	{
 		//echo " <b>entered into else</b><br>";
 		$rts=array();
+		//print_r($ids);
 		foreach($ids as $ti)
 		{
+			if(empty($ti))
+			{continue;}
+			else
+			{
+				
 			$rts[]=['tweet_id'=>$ti['tweetid'],'retweeters'=>[],'scanned_time'=>$ti['created_at']];
 			$twt=json_encode($rts);
+			}
 		}
 		//print_r($twt);
-		$ud="insert into user_scan_response(user_scan_id,us_response) values ('$uid','$twt')";
+		if(!empty($twt))
+		{
+		$ud="insert into user_scan_response(user_scan_id,us_response,us_type) values ('$uid','$twt','1')";
 		$rt=mysqli_query($conn,$ud);
-		if($rt)
+		if(!$rt)
 		{
-			//echo " yes";
+			echo " problem while inserting response in usr<br>";
 		}
-		else
-		{
-			echo "problem 2";
 		}
+		
 		
 	}
 	//delete_object();
@@ -126,7 +137,7 @@ function delete_object()
 function json_retweeters($uid,$rt_id,$r_prspctv_nm,$r_prspctv_sn,$r_prspctv_id,$r_prspctv_scr)
 {
 	global $conn;
-	$txt=" select * from user_scan_response where user_scan_id=$uid";
+	$txt=" select * from user_scan_response where user_scan_id=$uid and us_type=1";
 	$t=mysqli_query($conn,$txt);
 	if(mysqli_num_rows($t)>0)
 	{
@@ -141,12 +152,12 @@ function json_retweeters($uid,$rt_id,$r_prspctv_nm,$r_prspctv_sn,$r_prspctv_id,$
 			{
 				if(!in_array($r_prspctv_id,$response->retweeters))
 				{
-				echo "  tweet id found in db:".$rt_id."<br>";
+				//echo "  tweet id found in db:".$rt_id."<br>";
 				array_push($response->retweeters,$r_prspctv_id);
-				print_r($res);
+				//print_r($res);
 				$udt=json_encode($res);	
-				print_r($udt);
-				$up="update user_scan_response set  us_response='$udt' where user_scan_id=$uid";
+				//print_r($udt);
+				$up="update user_scan_response set  us_response='$udt' where user_scan_id=$uid and us_type=1";
 				$gh=mysqli_query($conn,$up);
 				if($gh)
 				{
@@ -173,7 +184,7 @@ function json_retweeters($uid,$rt_id,$r_prspctv_nm,$r_prspctv_sn,$r_prspctv_id,$
 				}
 				else
 				{
-					echo " this retweeters is already scanned<br>";
+					//echo " this retweeters is already scanned<br>";
 					break;
 				}
 			}
@@ -185,7 +196,7 @@ function json_listmem($onr,$osn,$onrnm,$pid,$slug,$psid,$scr)
 {
 	global $conn,$points_db;
 	$sl=$slug;
-	echo " $slug";
+	
 	$test="SELECT u_id FROM user_accounts WHERE account_id='$onr' AND at_id=2";
 	$result=mysqli_query($conn,$test);			
 	if(mysqli_num_rows($result)>0)
@@ -205,17 +216,17 @@ function json_listmem($onr,$osn,$onrnm,$pid,$slug,$psid,$scr)
 			{
 				if(!in_array($psid,$response->members))
 				{
-					echo " new meber found:".$psid."<br>";
+					//echo " new meber found:".$psid."<br>";
 					array_push($response->members,$psid);
-					print_r($res);
+					//print_r($res);
 					$udt=json_encode($res);	
-				print_r($udt);
-				$up="update user_scan_response set  us_response='$udt' where user_scan_id=$mid";
+				//print_r($udt);
+				$up="update user_scan_response set  us_response='$udt' where user_scan_id=$mid AND us_type=4";
 				$gh=mysqli_query($conn,$up);
 					if($gh)
 				{
 					update_existing($pid,$scr);
-						echo " new member adde successfully<br>";
+						
 				}
 					else
 					{
@@ -225,7 +236,7 @@ function json_listmem($onr,$osn,$onrnm,$pid,$slug,$psid,$scr)
 				}
 				else
 				{
-					echo " all members are already added<br>";
+					//echo " all members are already added<br>";
 				}
 				break;
 			}
@@ -237,7 +248,7 @@ function json_listsub($onr,$osn,$onrnm,$pid,$slug,$psid,$scr)
 {
 	global $conn,$points_db;
 	$sl=$slug;
-	echo " $slug";
+	
 	$test="SELECT u_id FROM user_accounts WHERE account_id='$onr' AND at_id=2";
 	$result=mysqli_query($conn,$test);			
 	if(mysqli_num_rows($result)>0)
@@ -257,17 +268,17 @@ function json_listsub($onr,$osn,$onrnm,$pid,$slug,$psid,$scr)
 			{
 				if(!in_array($psid,$response->subscribers))
 				{
-					echo " new meber found:".$psid."<br>";
+					//echo " new meber found:".$psid."<br>";
 					array_push($response->subscribers,$psid);
-					print_r($res);
+					//print_r($res);
 					$udt=json_encode($res);	
-				print_r($udt);
-				$up="update user_scan_response set  us_response='$udt' where user_scan_id=$mid";
+				//print_r($udt);
+				$up="update user_scan_response set  us_response='$udt' where user_scan_id=$mid AND us_type=4";
 				$gh=mysqli_query($conn,$up);
 					if($gh)
 				{
 					update_existing($pid,$scr);
-						echo " new subscriber is added successfully<br>";
+						
 				}
 					else
 					{
@@ -277,7 +288,7 @@ function json_listsub($onr,$osn,$onrnm,$pid,$slug,$psid,$scr)
 				}
 				else
 				{
-					echo " all subscriber are already added<br>";
+					//echo " all subscriber are already added<br>";
 				}
 				break;
 			}

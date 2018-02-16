@@ -66,7 +66,9 @@ function scanProfile($fbuid,$fb,$tdbg)
                 if ($key == 'u_about') {
                     echo "<br><b>About</b>";
                     $respnode = $response->getGraphNode();
+					//echo $respnode['about'];
                     if (isset($respnode['about']) && nlp($respnode['about'])) {
+						echo $respnode['about'];
                         $_SESSION['fbscore'] += 10;
                     }
                     if (isset($respnode['religion']) && nlp($respnode['religion'])) {
@@ -166,10 +168,10 @@ function scanTimeline($fbuid,$fb,$type,$tdbg) {
         try {
             if ($type == 'long') {
                 $since = date("Y-m-d", strtotime(date("y-m-d") . ' -1 year'));
-                $until = date("Y-m-d", strtotime(date("y-m-d") . ' -2 days'));
+                $until = date("Y-m-d", strtotime(date("y-m-d") . ' +1 days'));
             } else {
-                $since = date("Y-m-d", strtotime(date("y-m-d") . ' -5 days'));
-                $until = date("Y-m-d", strtotime(date("y-m-d") . ' -2 days'));
+                $since = date("Y-m-d", strtotime(date("y-m-d") . ' -3 days'));
+                $until = date("Y-m-d", strtotime(date("y-m-d") . ' +1 days'));
             }
 
             $feedsget = $fb->get($fbuid . '/feed?fields=created_time,description,message,from,name,caption,message_tags,source,status_type,story,story_tags,to{id,name,profile_type},type,parent_id,place,privacy,shares,sharedposts{from},reactions.summary(true){id,name,type,profile_type},comments.summary(true){from,message,message_tags,comments}&until=' . $until . '&since=' . $since);

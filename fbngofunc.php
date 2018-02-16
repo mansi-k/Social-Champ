@@ -524,7 +524,7 @@ function scanPageFeed($feed,$ngo) {
             //print_r($comments);
             do {
                 foreach ($comments as $com) {
-                    if(!isAdmin($com['from']) && $com['from']['id']!=$_SESSION['fb_uid']) {
+                    if(isset($com['from']) && !isAdmin($com['from']) && $com['from']['id']!=$_SESSION['fb_uid']) {
                         echo "<br><b>Commented By : </b>";
                         if (isset($com['from'])) {
                             //print_r($com['from']);
@@ -573,7 +573,7 @@ function scanPageFeed($feed,$ngo) {
                         echo "<br><b>Tagged in comment: </b>";
                         foreach ($com['message_tags'] as $mtag) {
                             if($mtag['id']!=$_SESSION['fb_uid'] && !isAdmin($mtag)) {
-                                print_r($mtag);
+                                //print_r($mtag);
                                 if ($ngo && $own)
                                     fetchPeople($mtag,$points['n_tagcom']);
                                 else if($ngo && !$own)
@@ -716,7 +716,7 @@ function fetchPeople($arr, $pts) {
             else {
                 if(isset($arr['uid']) && $arr['uid']!=null && $arr['uid']!='') {
                     $uid = $arr['uid'];
-                    echo "<b>".$uid."</b>";
+                    //echo "<b>".$uid."</b>";
                     mysqli_query($conn, "UPDATE ngo_social_objects SET u_id=$uid, so_score=so_score+$pts WHERE ns_id=$abc");
                 }
                 else {

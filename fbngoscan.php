@@ -14,9 +14,11 @@ use Facebook\FacebookRequest;
 
 
 $_SESSION['since'] = date("Y-m-d",strtotime(date("y-m-d").' -10 days'));
-$_SESSION['until'] = date("Y-m-d",strtotime(date("y-m-d").' -1 day'));
+$_SESSION['until'] = date("Y-m-d",strtotime(date("y-m-d").' +1 day'));
+//$_SESSION['until'] = date("Y-m-d");
+//print_r($_SESSION['since']);
 
-$q1 = mysqli_query($conn,"SELECT n.*, a.account_id, a.account_name, a.account_token FROM ngo_social_objects AS n, user_accounts AS a, user_extended AS e WHERE n.u_id=e.u_id=a.u_id AND a.at_id=1 AND e.ut_id=4");
+$q1 = mysqli_query($conn,"SELECT n.*, a.account_id, a.account_name, a.account_token FROM ngo_social_objects AS n, user_accounts AS a, user_extended AS e WHERE n.u_id=e.u_id=a.u_id AND a.at_id=1 AND e.ut_id=4 AND n.so_id<>'147881722563636'");
 while($row=mysqli_fetch_array($q1)) {
     if($row['so_token']!=null || $row['so_token']!='')
         $_SESSION['fb_access_token'] = $row['so_token'];

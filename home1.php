@@ -45,16 +45,17 @@
  
  <legend><center><h2 style="font-size:60px"><b>NGO Admin Panel</b></h2></center></legend>
   <div class="btn-group dropup" id="btn1">
-  <h2><br><a class="btn btn-primary one" href = "register.php"  role = "button"><b>Register new user</b></a></br></h2>
- <h3><br><a class="btn btn-primary two" href ="register.php"  role="button"><b>Donate</b></a></br></h3>
- <h4><br><br><a class="btn btn-primary three" href ="register.php"  role="button"><b>Custom scan</b></button></a></br></h4>
- </button>
+  <h4><br><br><a href ="score4.php" class="btn btn-primary six" role="button" target="_blank"><b>View Social Champions</b></a></br></h4>
+  <h3><br><a href ="activity.php" class="btn btn-primary five" role="button" target="_blank"><b>View Social Profiles</b></a></br></h3>
+    <h2><br><a href ="social_object.php" class="btn btn-primary four" role="button" target="_blank"><b>View your profiles</b></a></br></h2>
+ 
   </div>
   <div class="btn-group dropup" id="btn2">
-  <h2><br><a href ="register.php" class="btn btn-primary four" role="button"><b>View your profiles</b></a></br></h2>
-  <h3><br><a href ="register.php" class="btn btn-primary five" role="button"><b>View Social Profiles</b></a></br></h3>
-  <h4><br><br><a href ="register.php" class="btn btn-primary six" role="button"><b>View Social Champions</b></a></br></h4>
-  </button>
+	
+	<h4><br><br><a class="btn btn-primary three" href ="extrascan.php"  role="button" target="_blank"><b>Custom scan</b></button></a></br></h4>
+  <h2><br><a class="btn btn-primary one" href = "register.php"  role = "button" target="_blank"><b>Register new user</b></a></br></h2>
+ <h3><br><a class="btn btn-primary two" href ="donate1.php"  role="button" target="_blank"><b>Donate</b></a></br></h3>
+  
    </div>
 
   </div>

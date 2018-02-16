@@ -5,14 +5,17 @@ include('twitter_timeline_func.php');
 include('twitter_func_defbyme.php');
 include('twitter_points.php');
 include('twitter_update_record.php');
+$respost=array();
 function scanPost($connection,$bid)
 {
 	global $conn,$points_db;	
 	$id=$bid;
-	echo "$id";
+	
+	$rpostes=array();
+	$respost=array();
 	//$post=$connection->get('statuses/show/id',['$id'=>$id]);
 	$post=$connection->get('statuses/show', array('id' => $id, 'include_entities' => true, 'include_my_retweet'=>true));
-	$_SESSION['respost']=$respost[]=$post;
+	$_SESSION['respost']=$rpostes[]=$respost[]=$post;
 	//print_r($respost);
 	echo "<br><b>Posted By</b><br>";
 	foreach ($respost as $tg)
@@ -23,16 +26,17 @@ function scanPost($connection,$bid)
 		$time=$tg->created_at;
 		//echo $ourngonm;
 		
-		echo $ourngonm."->"."<br>";
+		
 		if(!searchOurNGO($ourngoid,$ourngosn))
 		{
+			echo $ourngonm."->17";
 				$test="SELECT u_id FROM user_accounts WHERE account_id='$ourngoid' AND at_id=2";
 				$result=mysqli_query($conn,$test);
 				if(mysqli_num_rows($result)>0)
 				{
 					$res=mysqli_fetch_array($result);
 					$pid=$res['u_id'];
-					check_existing($pid,$id,$time,$ourngonm,$ourngosn,$ourngoid);
+					check_existing($pid,$id,$time,$ourngonm,$ourngosn,$ourngoid,$respost);
 				}	
 			else
 			{
@@ -50,7 +54,7 @@ function scanPost($connection,$bid)
 							{
 							$res=mysqli_fetch_array($re);
 							$pid=$res['u_id'];
-							check_existing($pid,$id,$time,$ourngonm,$ourngosn,$ourngoid);
+							check_existing($pid,$id,$time,$ourngonm,$ourngosn,$ourngoid,$respost);
 							}
 						}
 			}
@@ -72,8 +76,8 @@ function scanPost($connection,$bid)
 							//echo $rt->user->location;
 							//$rloc=strtolower($rt->user->location);
 							//if(stripos($rt,'india')||empty($rloc))
-						$r_prspctv_sn=$rt->user->screen_name;
-						$r_prspctv_nm=$rt->user->name;
+						$r_prspctv_sn=mysqli_real_escape_string($conn,$rt->user->screen_name);
+						$r_prspctv_nm=mysqli_real_escape_string($conn,$rt->user->name);
 						$r_prspctv_id=$rt->user->id_str;	
 						foreach($points_db as $listitem)
 						{
@@ -114,8 +118,8 @@ function scanPost($connection,$bid)
 					//$rloc=strtolower($rt->user->location);
 					//if(stripos($rt,'india')||empty($rloc))
 					//echo " retweeted by ".$rt->user->screen_name;
-					$r_prspctv_sn=$rt->user->screen_name;
-					$r_prspctv_nm=$rt->user->name;
+					$r_prspctv_sn=mysqli_real_escape_string($conn,$rt->user->screen_name);
+					$r_prspctv_nm=mysqli_real_escape_string($conn,$rt->user->name);
 					$r_prspctv_id=$rt->user->id_str;		
 					foreach($points_db as $listitem)
 					{
@@ -168,13 +172,13 @@ function scanList($connection,$osn,$slug)
 				$n_ownlist= $listitem['points'];
 			}
 		}
-		echo " onr id".$onr."<br>";
+		//echo " owner id".$onr."<br>";
 		$list=array();
 			$tst="SELECT u_id FROM user_accounts WHERE account_id='$onr' AND at_id=2";
 		$reslt=mysqli_query($conn,$tst);
 		if(mysqli_num_rows($reslt)==0)
 		{
-			new_user($onrnm,$onrsn,$onr,0);
+			new_user($onrnm,$onrsn,$onr,n_ownlist);
 		}
 		
 		
@@ -186,12 +190,11 @@ function scanList($connection,$osn,$slug)
 		{
 			$res=mysqli_fetch_array($result);
 			$mid=$res['u_id'];
-			
-			$last="select * from ngo_social_objects where owner_nm='$osn'' AND so_name='$slug' and u_id='$mid'";
+			$last="select * from ngo_social_objects where owner_nm='$osn' AND so_name='$slug' and u_id='$mid'";
 			$ex=mysqli_query($conn,$last);
 			if(mysqli_num_rows($ex)==0)
 			{
-				$lstq="insert into ngo_social_objects(u_id,so_name,owner_nm,owner_id,at_id)values('$mid','$slug','$osn','$onr',2)";
+				$lstq="insert into ngo_social_objects(u_id,so_name,owner_nm,so_type_id,at_id,is_sw)values('$mid','$slug','$osn','4','2','yes')";
 				$resl=mysqli_query($conn,$lstq);
 				if(!resl)
 				{
@@ -201,7 +204,7 @@ function scanList($connection,$osn,$slug)
 			
 			
 			
-			$test="select * from scan_user_responses where u_id='$mid' AND response_type=4";
+			$test="select * from user_scan_response where u_id='$mid' AND us_type=4";
 			$op=mysqli_query($conn,$test);
 			if(mysqli_num_rows($op)>0)
 			{
@@ -226,20 +229,20 @@ function scanList($connection,$osn,$slug)
 						{
 							$list[]=['listid'=>'','listslug'=>$slug,'members'=>[],'subscribers'=>[]];
 							$lst=json_encode($list);;
-							$ud="update user_scan_response set us_response='$lst' where user_scan_id=$mid";
+							$ud="update user_scan_response set us_response='$lst' where user_scan_id=$mid and us_type=4";
 							$rt=mysqli_query($conn,$ud);
 						if($rt)
 						{
-							echo " new list slug inserded<br>";
+							//echo " new list slug inserded<br>";
 						}
 						else
 						{
-							echo "problem while inserting new tweet";
+							//echo "problem while inserting new tweet";
 						}
 						}
 						else
 						{
-							echo " list is alredy present";
+							//echo " list is alredy present";
 						}
 					}
 					
@@ -248,7 +251,7 @@ function scanList($connection,$osn,$slug)
 					{
 						$list[]=['listid'=>'','listslug'=>$slug,'members'=>[],'subscribers'=>[]];
 						$lt=json_encode($list);
-						$ud="update user_scan_response set  us_response='$lt' where user_scan_id=$mid";
+						$ud="update user_scan_response set  us_response='$lt' where user_scan_id=$mid and us_type=4";
 						$rt=mysqli_query($conn,$ud);
 						if($rt)
 						{
@@ -263,7 +266,7 @@ function scanList($connection,$osn,$slug)
 			else{
 				$ltt[]=['listid'=>'','listslug'=>$slug,'members'=>[],'subscribers'=>[]];
 				$lr=json_encode($ltt);
-				$ud="insert into user_scan_response(user_scan_id,us_response,us_type) values ('$mid','$lr',4)";
+				$ud="insert into user_scan_response(user_scan_id,us_response,us_type) values ('$mid','$lr','4')";
 		$rt=mysqli_query($conn,$ud);
 		if($rt)
 		{
@@ -326,14 +329,14 @@ function scanList($connection,$osn,$slug)
 		{
 			$type = $listitem['p_name'];
 			$acc = $listitem['pa_type'];
-			if ($type =='olist_from' && $acc==2)
+			if ($type =='o_listfrom' && $acc==2)
 			{
 				$m_prspctv_scr= $listitem['points'];
 				//echo "points".$m_prspctv_scr."<br><br>";
 			}
 		}
 	}
-		echo " ownr id"."$olid"."<br>";
+		//echo " ownr id"."$olid"."<br>";
 		echo "$prspctv_nm"."->"."$m_prspctv_scr<br>";
 		 	$tst="SELECT u_id FROM user_accounts WHERE account_id='$olid' AND at_id=2";
 		$reslt=mysqli_query($conn,$tst);
@@ -353,7 +356,7 @@ function scanList($connection,$osn,$slug)
 			$ex=mysqli_query($conn,$last);
 			if(mysqli_num_rows($ex)==0)
 			{
-				$lstq="insert into ngo_social_objects(u_id,so_name,owner_nm,owner_id,at_id)values('$mid','$slug','$olsn','$olid',2)";
+				$lstq="insert into ngo_social_objects(u_id,so_name,owner_nm,so_type_id,at_id,is_sw)values('$mid','$slug','$olsn','4','2','yes')";
 				$resl=mysqli_query($conn,$lstq);
 				if(!$resl)
 				{
@@ -388,20 +391,20 @@ function scanList($connection,$osn,$slug)
 						{
 							$list[]=['listid'=>'','listslug'=>$slug,'members'=>[],'subscribers'=>[]];
 							$lst=json_encode($list);;
-							$ud="update user_scan_response set us_response='$lst' where user_scan_id=$mid";
+							$ud="update user_scan_response set us_response='$lst' where user_scan_id=$mid and us_type=4";
 							$rt=mysqli_query($conn,$ud);
 						if($rt)
 						{
-							echo " new list slug inserded<br>";
+							//echo " new list slug inserded<br>";
 						}
 						else
 						{
-							echo "problem while inserting new tweet";
+							//echo "problem while inserting new tweet";
 						}
 						}
 						else
 						{
-							echo " list is alredy present";
+							//echo " list is alredy present";
 						}
 					}
 					
@@ -410,12 +413,10 @@ function scanList($connection,$osn,$slug)
 					{
 						$lst=['listid'=>'','listslug'=>$slug,'members'=>[],'subscribers'=>[]];
 						$lt=json_encode($lst);
-						$ud="update user_scan_response set  us_response='$lt' where user_scan_id=$mid";
+						$ud="update user_scan_response set  us_response='$lt' where user_scan_id=$mid and us_type=4";
 						$rt=mysqli_query($conn,$ud);
 						if($rt)
 						{
-							echo " su";
-						//	givelstpt();
 							givelstpt($olid,$olsn,$olnm,$m_prspctv_scr);
 						}
 						else{
@@ -426,12 +427,10 @@ function scanList($connection,$osn,$slug)
 			else{
 				$ltt[]=['listid'=>'','listslug'=>$slug,'members'=>[],'subscribers'=>[]];
 				$lr=json_encode($ltt);
-				$ud="insert into user_scan_response(user_scan_id,us_response,us_type) values ('$mid','$lr',4)";
+				$ud="insert into user_scan_response(user_scan_id,us_response,us_type) values ('$mid','$lr','4')";
 		$rt=mysqli_query($conn,$ud);
 		if($rt)
 		{
-			//echo " yes";
-			//givelistpt();
 			givelstpt($olid,$olsn,$olnm,$m_prspctv_scr);
 		}
 		else
@@ -469,14 +468,14 @@ function scanList($connection,$osn,$slug)
 }
 function givelstpt($onr,$onrsn,$onrnm,$lpt)
 {
+	global $conn;
 	$test="SELECT u_id FROM user_accounts WHERE account_id='$onr' AND at_id=2";
 		$result=mysqli_query($conn,$test);
 		
-		if(mysqli_num_rows($result)==0)
+		if(mysqli_num_rows($result)>0)
 		{		
-			new_user($onrnm,$onrsn,$onr,$lpt)	;
-		}
-		else{
+		
+		
 			$t=mysqli_fetch_array($result);
 			$pid=$t['u_id'];
 			update_existing($pid,$lpt);
@@ -510,9 +509,9 @@ function scan_subs($onr,$osn,$onrnm,$slug,$pt)
 				if(isset($key->screen_name))
 				{
 					//echo $key->screen_name."<br>";
-					$prspctv_sn=$key->screen_name;
+					$prspctv_sn=mysqli_real_escape_string($conn,$key->screen_name);
 					$prspctv_id=$key->id_str;
-					$prspctv_nm=$key->name;
+					$prspctv_nm=mysqli_real_escape_string($conn,$key->name);
 					echo  "$prspctv_nm"."->"."$pt<br>";
 					//$prspctv_des=$key->description;
 					
@@ -576,10 +575,10 @@ function scan_members($onr,$osn,$onrnm,$slug,$pt)
 			/*if(isset($key->screen_name))
 			{
 			//echo $key->screen_name."<br>";*/
-			$prspctv_sn=$key->screen_name;
+			$prspctv_sn=mysqli_real_escape_string($conn,$key->screen_name);
 			$prspctv_id=$key->id_str;
 			//$prspctv_sc=2;
-			$prspctv_nm=$key->name;
+			$prspctv_nm=mysqli_real_escape_string($conn,$key->name);
 			$prspctv_des=$key->description;
 			
 			if(!searchOurNGO($prspctv_id,$prspctv_sn))
@@ -621,14 +620,14 @@ function scan_members($onr,$osn,$onrnm,$slug,$pt)
 
 
 
-function check_existing($uid,$twt,$time,$onm,$osn,$oid)
+function check_existing($uid,$twt,$time,$onm,$osn,$oid,$respost)
 {
 
 	global $conn;
 	
 	$tweet=array();
 	$rts=array();
-	$txt=" select * from user_scan_response where user_scan_id=$uid";
+	$txt=" select * from user_scan_response where user_scan_id=$uid and us_type=1";
 	$t=mysqli_query($conn,$txt);
 	if(mysqli_num_rows($t)>0)
 	{
@@ -657,12 +656,12 @@ function check_existing($uid,$twt,$time,$onm,$osn,$oid)
 						$tweet[]=['tweet_id'=>$twt,'retweeters'=>[],'scanned_time'=>$time];
 						$twt=json_encode($tweet);
 						//print_r($twt);
-						$ud="update user_scan_response set us_response='$twt' where user_scan_id=$uid";
+						$ud="update user_scan_response set us_response='$twt' where user_scan_id=$uid and us_type=1";
 						$rt=mysqli_query($conn,$ud);
 						if($rt)
 						{
-							echo " new tweet id inserted<br>";
-							givepoints($uid,$onm,$osn,$oid);
+							//echo " new tweet id inserted<br>";
+							givepoints($uid,$onm,$osn,$oid,$respost);
 						}
 						else
 						{
@@ -671,7 +670,7 @@ function check_existing($uid,$twt,$time,$onm,$osn,$oid)
 					}
 					else
 					{
-						echo " tweet already scanned"."<br>";
+						//echo " tweet already scanned"."<br>";
 					}
 				}
 			}
@@ -682,12 +681,12 @@ function check_existing($uid,$twt,$time,$onm,$osn,$oid)
 			$twt=json_encode($tweet);
 			
 		//print_r($twt);
-		$ud="update user_scan_response set  us_response='$twt' where user_scan_id=$uid";
+		$ud="update user_scan_response set  us_response='$twt' where user_scan_id=$uid and us_type=1";
 		$rt=mysqli_query($conn,$ud);
 		if($rt)
 		{
 			//echo " success";
-			givepoints($uid,$onm,$osn,$oid);
+			givepoints($uid,$onm,$osn,$oid,$respost);
 		}
 		else{
 			echo "problem1 while inserting tweet<br>";
@@ -707,7 +706,7 @@ function check_existing($uid,$twt,$time,$onm,$osn,$oid)
 		if($rt)
 		{
 			//echo " yes";
-		givepoints($uid,$onm,$osn,$oid);
+		givepoints($uid,$onm,$osn,$oid,$respost);
 		}
 		else
 		{
@@ -718,7 +717,7 @@ function check_existing($uid,$twt,$time,$onm,$osn,$oid)
 	//delete_object();
 }
 
-function givepoints($onm,$osn,$oid)
+function givepoints($uid,$onm,$osn,$oid,$respost)
 {
 	global $points_db,$conn;
 	$m_prspctv_scr=0;
@@ -739,28 +738,28 @@ function givepoints($onm,$osn,$oid)
 			$res=mysqli_fetch_array($result);
 			$pid=$res['u_id'];
 			update_existing($pid,$m_prspctv_scr);
-			echo " points given to ->".$onm;
+			//echo " $m_prspctv_scr"."<br>";
 		}
 		/*else
 		{
 			new_user($onm,$osn,$oid,$m_prspctv_scr)	;
 		}	*/
 	
-	$respost=$_SESSION['respost'];
-	print_r($respost);
+	//$respost=$_SESSION['respost'];
+	
+	//print_r($respost);
 	echo "<br><b>mentioned users</b><br>";
 	if(searchOurNGO($oid,$osn))
 	{
 		foreach ($respost as $tg)
 		{			
-			if(!empty($tg->entities->user_mentions))
-			{
+			
 			foreach($tg->entities->user_mentions as $key)
 			{
-				if(!empty($tg->entities->user_mentions))
-				{			
-					$m_prspctv_sn=$key->screen_name;
-					$m_prspctv_nm=$key->name;
+					if(!empty($key))
+					{
+					$m_prspctv_sn=mysqli_real_escape_string($key->screen_name);
+					$m_prspctv_nm=mysqli_real_escape_string($key->name);
 					$m_prspctv_id=$key->id_str;		
 					foreach($points_db as $listitem)
 					{
@@ -786,23 +785,25 @@ function givepoints($onm,$osn,$oid)
 						new_user($m_prspctv_nm,$m_prspctv_sn,$m_prspctv_id,$m_prspctv_scr)	;
 					}		
 												
-				}
+				
 			}
-			}
-		}
+			
+		}}
 	
 	
 }
 	else
 	{
+		//echo " entered into else<br>";
 		foreach ($respost as $tg)
-		{	
-			if(!empty($tg->entites->user_mentions))
-			{
+		{
 			foreach($tg->entities->user_mentions as $key)
 			{
-				$m_prspctv_sn=$key->screen_name;
-				$m_prspctv_nm=$key->name;
+				if(!empty($key))
+				{
+				
+				$m_prspctv_sn=mysqli_real_escape_string($conn,$key->screen_name);
+				$m_prspctv_nm=mysqli_real_escape_string($conn,$key->name);
 				$m_prspctv_id=$key->id_str;				
 				foreach($points_db as $listitem)
 				{
@@ -825,12 +826,12 @@ function givepoints($onm,$osn,$oid)
 				{												    
 					new_user($m_prspctv_nm,$m_prspctv_sn,$m_prspctv_id,$m_prspctv_scr)	;
 				}										
-			}	
+			
 			}
-		}
+		}}}
 	}
-}
 
+?>
 					
 			
 	

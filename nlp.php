@@ -3,7 +3,7 @@
 $perfectkw = array('non-government','non government','nongovernment','nonprofit','orphanage',
     'big international ngo','business organized ngo','community based','civil society','environmental ngo',
     'government organized ngo','grassroots','global social change',
-    'social work','social help','charity','charitable organization');
+    'social work', 'social worker', 'social help','charity','charitable organization');
 
 $helperkw = array('NPO','NGO','BINGO','BONGO','CBO','CSO','ENGO','GONGO','MONGO','IPO','GRO','GSCO','NPO','organization',
     'society','needy','equality','help','awareness','under-privilege','education','poor','poverty','slum','support',
@@ -20,6 +20,11 @@ nlp($text);
 */
 
 //nlp("non government-organization");
+/*
+if(nlp("I am a social worker.. you can contact me to publicize your NGO or NPO"))
+	echo "mila";
+else echo "nai";
+*/
 
 function nlp($text)
 {
@@ -41,7 +46,7 @@ function nlp($text)
     foreach ($perfectkw as $pkw) {
         //echo gettype($pos)."jfhvbd";
         //echo stripos($uwtext, $pkw)==0;
-        if (stripos($uwtext, $pkw)) {
+        if (stripos($pkw, $uwtext)) {
             $flag = 1;
             $skw = $pkw;
             break;

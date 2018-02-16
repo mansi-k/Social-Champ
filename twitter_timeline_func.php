@@ -44,12 +44,13 @@ function scanTweets($tweet)
 	$ids=array();
 	global $ids;
 	global $connection,$account_id,$screen_name,$conn;
+	$m_id=0;$lastid=0;
 	$max=-1;
 	try
 	{
 		$totaltweet[]=$tweet;
 		$page=0;	  
-		echo "<br><br><br>";
+		echo "<br>";
 		$max2=count($totaltweet[$page])-1;
 		if($max2==0)
 			{
@@ -95,7 +96,7 @@ function scanTweets($tweet)
 		$repopcnt=$popcnt=$repop=$pop=0;$retweetscount=$otrngoshare=$retweet_s=0;$tweet_s=0;$tweet_sc=0;
 		$tweet_ids=array();
 		$ids[]=array();
-		$k=0;
+		$k=0;$tweetno=0;
 		global $points_db;
 		foreach($totaltweets as $page)
 		{ 	
@@ -110,7 +111,8 @@ function scanTweets($tweet)
 					//++++++retweet+++++++++++++++//
 					if(isset($key->retweeted_status)&& ($key->retweeted==1))//retweets
 					{				
-						echo "<br>...retweet..".$key->text."<br>";
+						echo "retweet..".$key->text."<br>";
+						$tweetno+=1;
 					 	$repop=$key->favorite_count;//likes
 						$retweetscount=$key->retweet_count;//shares
 						$retweetcnt=$retweetcnt+$retweetscount;
@@ -135,10 +137,10 @@ function scanTweets($tweet)
 										$ourngoshare= $listitem['points'];
 									}
 								}
-								echo" mentioned SA in post this retweet...."."<br>"." n_share 12 points<br>";
+								echo" mentioned SA in this retweet...."." n_share 12 points<br>";
 								
 								$retweet_s=$retweet_s+$ourngoshare;//points sharing SA's post
-								echo  " total retwets points: ".$retweet_s."<br>";
+								//echo  " total retwets points: ".$retweet_s."<br>";
 							}
 							else
 							{
@@ -152,7 +154,7 @@ function scanTweets($tweet)
 									}
 								}
 								$retweet_s=$retweet_s+$otrngoshare;	//points for sharing others post
-								echo " shared someone else posts.....total retweet score of user"."$retweet_s"."<br>";
+								echo " shared someone else posts...."."o_share 10 points"."<br>";
 								//check if SA is mentioned in others post
 								if(!empty($key->entities->user_mentions ))
 								{
@@ -191,7 +193,7 @@ function scanTweets($tweet)
 										{
 											if(!search_prospective($nm,$sn))
 											{
-											echo " SA not mentioned ->other mentioned users"."$sn"."<br>";
+											echo " SA not mentioned ->other mentioned users->15"."$sn"."<br>";
 											$test="SELECT u_id FROM user_accounts WHERE account_id='$tgid' AND at_id=2";
 											$result=mysqli_query($conn,$test);
 											
@@ -220,14 +222,15 @@ function scanTweets($tweet)
 								}
 							}			
 						}
-						echo "..likes..".$repop;
-						echo "..shares..".$retweetscount;
+						//echo "..likes..".$repop;
+						//echo "..shares..".$retweetscount;
 					}
 					
 					else//self posted tweets
 					{
-						echo "<br>*self post*..".$key->text."<br>";
+						echo "*self post*..".$key->text."<br>";
 						//$tweetcount+=17;
+						$tweetno+=1;
 						$pop=$key->favorite_count;//likes
 						$retweetscount=$key->retweet_count;//shares
 						$retweetcnt=$retweetcnt+$retweetscount;
@@ -235,8 +238,8 @@ function scanTweets($tweet)
 						//$ids[]=$key->id_str;
 						$ids[]=['tweetid'=>$key->id_str,'created_at'=>$key->created_at];
 						
-						echo "..likes..".$pop;
-						echo "..shares..".$retweetscount;
+						//echo "..likes..".$pop;
+						//echo "..shares..".$retweetscount;
 						if (!empty ($key->entities->user_mentions))
 						{
 						foreach($key->entities->user_mentions as $tag)
@@ -304,7 +307,7 @@ function scanTweets($tweet)
 									}
 								}
 								$tweet_s+=$tweets;
-								echo " self posted another tweet not mentioned anyone: o_from:"."<br>" ;
+								echo " self posted another tweet not mentioned anyone: o_from 17:"."<br>" ;
 							}
 						}	
 					}
@@ -332,7 +335,7 @@ function scanTweets($tweet)
 				//$_SESSION['profile']=$profile=ceil($des+$followers_count+$friends_count);
 				//echo "profile score".$profile."<br>";
 				$lastid=$m_id;
-				echo " we scanned till tweet having id: ".$lastid."<br>";
+				//echo " we scanned till tweet having id: ".$lastid."<br>";
 				$score=$tweetscr+$popularity;
 		//............insert id into user_scan_response........//
 		//print_r($ids);
@@ -342,11 +345,13 @@ function scanTweets($tweet)
 		
 		if(mysqli_num_rows($ck_res)>0)
 		{
+			//echo " entered into update_response";
 			$ck_resar=mysqli_fetch_array($ck_res);
 			$uid=$ck_resar['u_id'];
 			update_response($uid);
 		}
-		
+		if($tweetno>0)
+		{
 			$test="SELECT u_id FROM user_accounts WHERE account_id='$account_id' AND at_id=2";
 				$result=mysqli_query($conn,$test);
 					
@@ -355,19 +360,20 @@ function scanTweets($tweet)
 					$res=mysqli_fetch_array($result);
 					$pid=$res['u_id'];
 					update_existing($pid,$score);
-					$lq="select * from scan_mx_id where u_id=$pid";
+					$lq="select * from scan_mx_id where u_id=$pid and response_type=1";
 					$lc=mysqli_query($conn,$lq);
-					if(!$lq || mysqli_num_rows($lc)==0)
+					if( mysqli_num_rows($lc)==0)
 					{
-					$lstid="insert into scan_mx_id(u_id,response,response_type) values('$pid','$lastid',1)";
+					$lstid="insert into scan_mx_id(u_id,response,response_type) values('$pid','$lastid','1')";
 					mysqli_query($conn,$lstid);
 					}
 					else
 					{
-						$lstid=" update scan_mx_id set response=$lastid where u_id=$pid";
+						$lstid=" update scan_mx_id set response=$lastid where u_id=$pid and response_type=1";
 						mysqli_query($conn,$lstid);
 					}
 				}
+		}
 				
 				if(!mysqli_error($conn))
 				{
@@ -386,6 +392,9 @@ function scanTweets($tweet)
 	{
 		echo "twitter returned an error".$e->getMessage();
 	}
+	finally{
+		$ids=array();
+	}
 }
 //****.................................likes by user........................................*****//
 function scanlikes($tweet_likes)
@@ -396,8 +405,8 @@ function scanlikes($tweet_likes)
 		global $user_name,$i,$conn;
 		$total_like[]=$tweet_likes;
 		$pglike=0;
-		$i=0;
-		$likes=$likescr=0;
+		$i=0;$lastid=0;
+		$likes=$likescr=0;$max_id=0;$likeno=0;
 		$max2=count($total_like[$pglike])-1;
 		
 		if($max2==0)
@@ -457,13 +466,14 @@ function scanlikes($tweet_likes)
 						{
 								echo $like->text."<br>";
 							//$likes=$likes+1;
+							$likeno+=1;
 							$lk_sn=$like->user->screen_name;
 							$lk_nm=$like->user->name;
 							$lk_id=$like->user->id_str;
 							
 							if(searchOurNGO($lk_id,$lk_sn))
 							{
-								echo "liked our ngo's post <br>";
+								echo "liked our ngo's post->n_like <br>";
 								foreach($points_db as $listitem) 
 								{
 									$type = $listitem['p_name'];
@@ -497,9 +507,11 @@ function scanlikes($tweet_likes)
 			}
 		}
 		}
-			$lastid=$m_lkid;
-		echo " db max id:".$lastid."<br>";
+			$lastid=$max_id;
+		//echo " db max id:".$lastid."<br>";
 		//$likescr=ceil(($likes/100)*10);
+		if($likeno>0)
+		{
 		$test="SELECT u_id FROM user_accounts WHERE account_id='$account_id' AND at_id=2";
 		$result=mysqli_query($conn,$test);			
 		if(mysqli_num_rows($result)>0)
@@ -508,20 +520,24 @@ function scanlikes($tweet_likes)
 			$pid=$res['u_id'];
 			update_existing($pid,$likes);
 			
-					$lq="select * from scan_mx_id where u_id=$pid";
+					$lq="select * from scan_mx_id where u_id=$pid and response_type=3";
 					$lc=mysqli_query($conn,$lq);
 					if(!$lq || mysqli_num_rows($lc)==0)
 					{
-					$lstid="insert into scan_mx_id(u_id,response,response_type) values('$pid','$lastid',3)";
-					mysqli_query($conn,$lstid);
+					$lstid="insert into scan_mx_id(u_id,response,response_type) values('$pid','$lastid','3')";
+					$h=mysqli_query($conn,$lstid);
+						if(!$h)
+						{
+							echo "ndgfjh";
+						}
 					}
 					else
 					{
-						$lstid=" update scan_mx_id set response=$lastid where so_id=$pid";
+						$lstid=" update scan_mx_id set response=$lastid where so_id=$pid and response_type=3";
 						mysqli_query($conn,$lstid);
 					}
 				}
-		
+		}
 			$_SESSION['likescr']=$likes;
 			echo "tweets liked by user: "."$likes"."<br>";
 	}
@@ -535,92 +551,129 @@ function scanlikes($tweet_likes)
 //................scan comments for authenticated user...........//
 function scan_comments($retweeters)
 {
-	global $ids;
+	//global $ids;
 	global $connection,$account_id,$screen_name,$p_name,$conn,$points_db;
 	//$connection=$_SESSION['connection'];	
 	$total_retweeter[]=$retweeters;
 	//print_r($total_retweeter);
-	$tlike=0;$i=0;
+	$tlike=0;$i=0;$idtw=array();$n=0;$commentno=0;$max_id=0;
 	$max2=count($total_retweeter[$tlike])-1;
-		$max_id=$total_retweeter[$tlike][0]->id_str;
+	if($max2==0)	
+	{
+		$total_retweeters[]=$total_retweeter;
+	}
+	else
+	{
+	$max_id=$total_retweeter[$tlike][0]->id_str;
+	}
 	//print_r($ids);
 	//$likes=$likescr=0;
 	//print_r($total_retweeters);
 	//$ids=scanTweets();
-	while(!empty($retweeters))
+	while(!empty($retweeters) && $max2!=0)
 	{
-		if($max2==0)
-			{
-				$total_retweeters[]=$retweeters;
-				break;
-			}
-			echo " scan till ..."."$max_id"."<br>";
-		//$max=count($total_retweeters[$tlike])-1;
+		
 		$retweeters=$connection->get('statuses/mentions_timeline',['count'=>20,'include_entities'=>true,'max_id'=>$max_id]);
 		if (empty($retweeters))
 			{
 				break;
 			}
 		//$retweeters=$connection->get('statuses/retweets/:id',['id'=> 940282576253489154]);not working
-		$totalretweetrs[]=$retweeters;
-			$max=count($totalretweetrs[$tlike])-1;
+		$ttrt[]=$retweeters;
+			$max=count($ttrt[$tlike])-1;
 			if ($max==0)
 			{
 				break;
 			}
-			$total_retweeters[]=$retweeters;
-			echo " last tweet no:".$max."<br>";
-			$since_id=$total_retweeters[$tlike][$max]->id_str;
-			$max_id=$since_id;
-			echo " lower record (next max id)...".$max_id."<br>";
-		$tlike+=1;
+		else
+		{
+			$mx_id=$ttrt[$tlike][$max]->id_str;
+			unset($ttrt[$tlike][$max]);
+			$total_retweeters[]=$ttrt;
+			
+			$max_id=$mx_id;
+			$ttrt=array();
+		}
 	}
 	//print_r($total_retweeters);
-	$n=count($ids);
-	//print_r($ids);
 	$i=0;
-	if(!empty($ids))
+	$lastid=$max_id;
+	$s="SELECT u_id FROM user_accounts WHERE account_id='$account_id' AND at_id=2";
+	$ck=mysqli_query($conn,$s);	
+	if(mysqli_num_rows($ck)>0)
 	{
-	foreach($total_retweeters as $rtr)
-	{
-		foreach($rtr as $key)
+		$c=mysqli_fetch_array($ck);
+		$uid=$c['u_id'];
+		$tf="select * from user_scan_response where user_scan_id=$uid and us_type=1";
+		$ff=mysqli_query($conn,$tf);
+		if(mysqli_num_rows($ff)>0)	
 		{
-			if (isset($key))
-			{
-				for($i=0;$i<$n;$i++)
+			$q=mysqli_fetch_array($ff);
+			
+			$tid=json_decode($q['us_response']);
+			foreach($tid as $td)
+				{ 
+				if(empty($td->tweet_id))
 				{
-					if($ids[$i]==$key->in_reply_to_status_id_str)
-					{
-						echo "comment: "." $key->text"."<br>";
-						//prospectv
-						$prspctv_id= $key->user->id_str;
-						$prspctv_sn=$key->user->screen_name;
-						//$prspctv_sc=2;
-						$prspctv_nm=$key->user->name;
-						
-						echo"$p_name";
-						echo"$screen_name";
-						if(searchOurNGO($account_id,$screen_name))
-						{
-						foreach($points_db as $listitem) {
-    $type = $listitem['p_name'];
-    $acc = $listitem['pa_type'];
-	if ($type =='n_comment' && $acc==2)
-	{
-		$comment_s= $listitem['points'];
+					continue;
+				}
+				else
+				{
+			$idtw[]=$td->tweet_id;
+				}
+			}
+		}
 	}
-						}}		
-						else
+		$n=count($idtw);
+			foreach($total_retweeters as $gg)
+			{
+				foreach($gg as $rtr)
+				{
+				foreach($rtr as $key)
+				{
+					
+					//print_r($key);
+						//	echo $key->text;
+						//echo $key->in_reply_to_status_id_str;
+						if(!empty($key->in_reply_to_status_id_str))
 						{
-								foreach($points_db as $listitem) {
-    $type = $listitem['p_name'];
-    $acc = $listitem['pa_type'];
-	if ($type =='nn_comment' && $acc==2)
-	{
-		$comment_s= $listitem['points'];
-	}
-						}
-						}
+						for($i=0;$i<$n;$i++)
+						{
+							if($idtw[$i]==$key->in_reply_to_status_id_str)
+							{
+								$commentno+=1;
+								echo "comment: "." $key->text"."<br>";
+								//prospectv
+								$prspctv_id= $key->user->id_str;
+								$prspctv_sn=$key->user->screen_name;
+								//$prspctv_sc=2;
+								$prspctv_nm=$key->user->name;
+								echo"$p_name";
+								echo"$screen_name";
+								if(searchOurNGO($account_id,$screen_name))
+								{
+									foreach($points_db as $listitem)
+									{
+										$type = $listitem['p_name'];
+										$acc = $listitem['pa_type'];
+										if ($type =='n_comment' && $acc==2)
+										{
+											$comment_s= $listitem['points'];
+										}
+									}
+								}		
+								else
+								{
+									foreach($points_db as $listitem)
+									{
+										$type = $listitem['p_name'];
+										$acc = $listitem['pa_type'];
+										if ($type =='nn_comment' && $acc==2)
+										{
+											$comment_s= $listitem['points'];
+										}
+									}
+								}
 					echo "<br>...prospective donars from comments :".$prspctv_nm."". "$prspctv_id"."".$prspctv_sn."$comment_s<br>";	
 						$test="SELECT u_id FROM user_accounts WHERE account_id='$prspctv_id' AND at_id=2";
 						$result=mysqli_query($conn,$test);
@@ -639,9 +692,41 @@ function scan_comments($retweeters)
 				}
 			}
 		}
-	}
-	}
+			}
+			}
+	if($commentno>0)
+		{
+			$test="SELECT u_id FROM user_accounts WHERE account_id='$account_id' AND at_id=2";
+				$result=mysqli_query($conn,$test);
+					
+				if(mysqli_num_rows($result)>0)
+				{
+					$res=mysqli_fetch_array($result);
+					$pid=$res['u_id'];
+					$lq="select * from scan_mx_id where u_id=$pid and response_type=2";
+					$lc=mysqli_query($conn,$lq);
+					if( mysqli_num_rows($lc)==0)
+					{
+					$lstid="insert into scan_mx_id(u_id,response,response_type) values('$pid','$lastid','2')";
+					mysqli_query($conn,$lstid);
+					}
+					else
+					{
+						$lstid=" update scan_mx_id set response=$lastid where u_id=$pid and response_type=2";
+						mysqli_query($conn,$lstid);
+					}
+				}
+		}
+
 }
+	
+		
+	
+
+		
+	
+	
+
 //.........retweeters of post....................//
 function retweeters()
 {
@@ -658,11 +743,11 @@ function retweeters()
 		$ck_resar=mysqli_fetch_array($ck_res);
 		$uid=$ck_resar['u_id'];
 		
-			$txt=" select * from user_scan_response where user_scan_id=$uid";
+			$txt=" select * from user_scan_response where user_scan_id=$uid and us_type=1";
 	$t=mysqli_query($conn,$txt);
 	if(mysqli_num_rows($t)>0)
 	{
-		echo " entered into if <br>";
+		//echo " entered into if <br>";
 		$tt=mysqli_fetch_array($t);
 		$tweet=json_decode($tt['us_response']);
 		if(!empty($tweet))
@@ -675,16 +760,13 @@ function retweeters()
 				}	
 				else
 				{
-					echo " retweeters for tweet id : $page->tweet_id";
+					//echo " retweeters for tweet id : $page->tweet_id";
 					$rtrs=$connection->get('statuses/retweets',array('id'=>$page->tweet_id));
 					$respostr[]=$rtrs;
-		
 	
-	//print_r($respostr);
-		echo "<br><br>";
 	if(!empty($respostr))
 	{
-				echo "retweeters";
+				//echo "retweeters";
 				foreach($respostr as $tt)	
 				{
 					foreach($tt as $rt)

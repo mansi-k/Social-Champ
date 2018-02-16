@@ -72,16 +72,17 @@ function scanTimeline()
 		if(!empty($tweet_likes))
 		scanlikes($tweet_likes);
 			}
-		echo "<b>comments</b><br>";
-		//with_oauth();
+		
 		//scan_comments();
+			echo " <b>retweeters</b><br>";
 		retweeters();
-		global $ids;
-		$ids=array();
+		//global $ids;
 		$respostr=array();
+			//scanlist();
+			//$ids=array();
 		
 	}
-	}
+}
 	catch(TwitterException $e)
 	{
 		echo "twitter returned an error".$e->getStatusCode();
@@ -117,5 +118,7 @@ function scanlist()
 			$_SESSION['$total_addedto_lists']=$total_addedto_lists[]=$addedtolist;
 			$acursor=$addedtolist->next_cursor;	
 			scan_addedto_list();
-		}	
+		}
+	//echo " sub from list.<br>";
+	//prospective_from_list();
 }

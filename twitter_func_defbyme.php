@@ -14,7 +14,7 @@ $prospective=array('ngo','non-government','nonprofit','orphanage',
     'government organized ngo','charitable trust');
 $user_name=array('Reshma_Khot','dogoodforNgo','Rsangeeta123');
 global $hashtag;
-$hashtag= array('social work','ngo','charitabletrust','AChildIsAChild','socialservices','donate','nonprofit','educategirls','educatechild');
+$hashtag= array('social work','ngo','charitabletrust','AChildIsAChild','socialservices','donate','nonprofit','educategirls','educatechild','NGO','foundation');
 //$prospective=array();
 function searchOurNGO($oid,$sn) {
     global $ourngo;

@@ -42,7 +42,7 @@ while($row = mysqli_fetch_array($q1)) {
     }
 }
 
-$q2 = mysqli_query($conn,"SELECT DISTINCT u1.name, u2.* FROM user AS u1 , user_accounts as u2, user_extended AS u3 WHERE u3.ut_id<>4 AND u3.ut_id<>3 AND u2.at_id=1 AND u2.account_token<>'' AND u1.u_id=u2.u_id AND u3.u_id=u1.u_id");
+$q2 = mysqli_query($conn,"SELECT DISTINCT u1.name, u2.* FROM user AS u1 , user_accounts as u2, user_extended AS u3 WHERE u3.ut_id<>4 AND u3.ut_id<>3 AND u2.at_id=1 AND u2.account_token<>'' AND u1.u_id<>1 AND u1.u_id=u2.u_id AND u3.u_id=u1.u_id");
 while($row = mysqli_fetch_array($q2)) {
     $tdbg = $fb->get("/debug_token?input_token=".$row['account_token'],$app_id."|".$app_secret);
     if($tdbg->getGraphNode()['is_valid'] && $tdbg->getGraphNode()['expires_at']>date('Y-m-d H:i:s')) {
@@ -65,8 +65,8 @@ while($row = mysqli_fetch_array($q2)) {
         $qs = mysqli_query($conn, "select percent_score from user_scores where st_id=1 AND ue_id in (select ue_id from user_extended where u_id=$uid)");
         if ($rw = mysqli_fetch_array($qs)) {
             if ($rw['percent_score'] == null || $rw['percent_score'] == '') {
+				scanProfile($_SESSION['fb_uid'], $fb, $tdbg->getGraphNode());
                 scanTimeline($_SESSION['fb_uid'], $fb, 'long', $tdbg->getGraphNode());
-                scanProfile($_SESSION['fb_uid'], $fb, $tdbg->getGraphNode());
             }
             else
                 scanTimeline($_SESSION['fb_uid'], $fb, 'short', $tdbg->getGraphNode());

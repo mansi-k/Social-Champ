@@ -545,9 +545,11 @@ function scanFeed($feed) {
             $frmeta = $fr['reactions']->getMetaData();
             $fcmeta = $fr['comments']->getMetaData();
             */
-
-            $frmeta = $feed['reactions']->getMetaData();
-            $fcmeta = $feed['comments']->getMetaData();
+			$frmeta=null;
+			if(isset($feed['reactions']))
+				$frmeta = $feed['reactions']->getMetaData();
+			if(isset($feed['reactions']))
+				$fcmeta = $feed['comments']->getMetaData();
 
             if (isset($frmeta['summary']['total_count'])) {
                 $feedpop += $frmeta['summary']['total_count'];

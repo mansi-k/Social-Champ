@@ -93,6 +93,7 @@ class FacebookCurlHttpClient implements FacebookHttpClientInterface
     public function openConnection($url, $method, $body, array $headers, $timeOut)
     {
         $options = [
+			//CURLOPT_SSLVERSION => 6,
             CURLOPT_CUSTOMREQUEST => $method,
             CURLOPT_HTTPHEADER => $this->compileRequestHeaders($headers),
             CURLOPT_URL => $url,
@@ -101,7 +102,7 @@ class FacebookCurlHttpClient implements FacebookHttpClientInterface
             CURLOPT_RETURNTRANSFER => true, // Follow 301 redirects
             CURLOPT_HEADER => true, // Enable header processing
             CURLOPT_SSL_VERIFYHOST => 2,
-            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_CAINFO => __DIR__ . '/certs/DigiCertHighAssuranceEVRootCA.pem',
         ];
 
