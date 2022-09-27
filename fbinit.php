@@ -8,7 +8,7 @@ include_once 'dbconn.php';
 require_once 'fbapi/vendor/autoload.php';
 
 $app_id = '550812835258864';
-$app_secret = 'faa34441ad17e5f9fbcd1ccfbd071817';
+$app_secret = '';
 
 $fb = new Facebook\Facebook([
     'app_id' => $app_id,
